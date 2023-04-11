@@ -2,7 +2,7 @@ import './App.css';
 import { useEffect, useState } from 'react';
 import { Routes, Route } from 'react-router-dom';
 
-import fetchBaconData from '../apiCalls';
+import fetchBaconData from './apiCalls';
 import Landing from './components/Landing';
 import Header from './components/Header';
 import BaconHolder from './components/BaconHolder';
