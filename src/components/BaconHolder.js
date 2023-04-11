@@ -7,26 +7,19 @@ const BaconHolder = ({ data, displayBaconDetails }) => {
 	const [checkboxInput, setCheckboxInput] = useState(false);
 
 	const sortedData = data.sort((a, b) => {
-		let nameA = a.companyName.toUpperCase();
-		let nameB = b.companyName.toUpperCase();
-
-		if (nameA < nameB) {
-			return -1;
-		}
-
-		if (nameA > nameB) {
-			return 1;
-		}
-
-		return 0;
+		return a.companyName
+			.toUpperCase()
+			.localeCompare(b.companyName.toUpperCase());
 	});
 
+	const searchInputLower = searchInput.toLowerCase();
 	const filteredSearchData = sortedData.filter((item) => {
-		let searchMatches =
-			item.companyName.toLowerCase().includes(searchInput.toLowerCase()) ||
-			item.baconStyle.toLowerCase().includes(searchInput.toLowerCase());
+		const searchMatches = ['companyName', 'baconStyle'].some((prop) =>
+			item[prop].toLowerCase().includes(searchInputLower)
+		);
 
-		let checkboxMatches = !checkboxInput || item.resealable === '✅';
+		const checkboxMatches = !checkboxInput || item.resealable === '✅';
+
 		return searchMatches && checkboxMatches;
 	});
 

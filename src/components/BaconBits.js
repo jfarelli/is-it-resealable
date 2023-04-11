@@ -1,7 +1,6 @@
 import { Link } from 'react-router-dom';
 
 const BaconBits = ({ selectedBacon }) => {
-	console.log('SELECTEDBACON in BACON BITS: ', selectedBacon);
 	return (
 		<div className="mt-20 flex flex-col items-center gap-20 p-8">
 			<Link to="/bacon-main">
@@ -19,7 +18,7 @@ const BaconBits = ({ selectedBacon }) => {
 				<div className="flex flex-col items-center">
 					<h3 className="font-bold text-3xl">{selectedBacon.companyName}</h3>
 					<h3 className="italic text-xl mb-4">{selectedBacon.baconStyle}</h3>
-					<p className="font-bold mb-4 text-xl">
+					<h4 className="font-bold mb-4 text-xl">
 						{selectedBacon.resealable === '❌' ? (
 							<p>
 								{selectedBacon.companyName} does{' '}
@@ -31,7 +30,7 @@ const BaconBits = ({ selectedBacon }) => {
 								{selectedBacon.companyName} believes in resealable packaging!
 							</p>
 						)}
-					</p>
+					</h4>
 					{selectedBacon.resealable === '❌' ? (
 						<p className="font-bold mb-4 text-xl uppercase italic text-[#9B4428] bg-[#F9BB38] text-center p-4 rounded-tl-2xl rounded-br-2xl">
 							Visit {selectedBacon.companyName} on social media
