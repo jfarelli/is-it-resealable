@@ -34,14 +34,14 @@ const BaconHolder = ({ data, displayBaconDetails }) => {
 		<div className="flex flex-col items-center justify-center gap-2 p-4 mt-16">
 			<input
 				type="text"
-				placeholder="Search For Your Favorite Brand..."
+				placeholder="Search For Your Favorite Brand, or Style..."
 				value={searchInput}
 				onChange={(event) => setSearchInput(event.target.value)}
 				className="text-center mt-5 border-2 border-gray-200 bg-white hover:cursor-text w-[30%] overflow-ellipsis"
 			/>
 			<div className="flex flex-col items-center">
 				<label className="flex flex-col font-bold uppercase text-center">
-					Or, Click to Show Only Resealable Bacon
+					Or, Click below to Show Only Resealable Bacon
 				</label>
 				<input
 					type="checkbox"
