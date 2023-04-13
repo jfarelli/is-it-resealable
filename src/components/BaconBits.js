@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 
 const BaconBits = ({ selectedBacon }) => {
 	return (
-		<div className="mt-20 flex flex-col items-center gap-20 p-8">
+		<div className="mt-20 flex flex-col items-center gap-20 p-8 bg-[#fdf2e3]">
 			<Link to="/bacon-main">
 				<button className="transition duration-270 ease-in-out">
 					Back to Search

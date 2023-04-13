@@ -5,6 +5,7 @@ import { useState } from 'react';
 const BaconHolder = ({ data, displayBaconDetails }) => {
 	const [searchInput, setSearchInput] = useState('');
 	const [checkboxInput, setCheckboxInput] = useState(false);
+	const [selectedCompany, setSelectedCompany] = useState('');
 
 	const sortedData = data.sort((a, b) => {
 		return a.companyName
@@ -12,20 +13,33 @@ const BaconHolder = ({ data, displayBaconDetails }) => {
 			.localeCompare(b.companyName.toUpperCase());
 	});
 
-	const companyButtons = () => {
-		return sortedData.reduce((acc, data) => {
-            console.log('DATA: ', data.companyName);
-            if (!acc.includes(data.companyName)) {
-                acc[data.companyName] = []
-            }
-            acc.push(data.companyName)
-            return acc
-        }, []);
-	};
+	const nonDuplicateNames = [
+		...new Set(sortedData.map((obj) => obj.companyName)),
+	];
 
-    console.log("COMPANYBUTTONS", companyButtons());
+	function filterOnButtonClick(e) {
+		if (selectedCompany === e.target.id) {
+			setSelectedCompany('');
+		} else {
+			setSelectedCompany(e.target.id);
+		}
+	}
+
+	const companyButtons = nonDuplicateNames.map((name) => (
+		<button
+			key={name}
+			id={name}
+			onClick={filterOnButtonClick}
+			className={`h-[2em] text-sm flex items-center justify-center transition duration-270 ease-in-out ${
+				selectedCompany === name ? 'bg-[#75331d]' : 'bg-[#9B4428]'
+			}`}
+		>
+			{name}
+		</button>
+	));
 
 	const searchInputLower = searchInput.toLowerCase();
+
 	const filteredSearchData = sortedData.filter((item) => {
 		const searchMatches = ['companyName', 'baconStyle'].some((prop) =>
 			item[prop].toLowerCase().includes(searchInputLower)
@@ -33,7 +47,13 @@ const BaconHolder = ({ data, displayBaconDetails }) => {
 
 		const checkboxMatches = !checkboxInput || item.resealable === '✅';
 
-		return searchMatches && checkboxMatches;
+		if (selectedCompany) {
+			return (
+				item.companyName === selectedCompany && searchMatches && checkboxMatches
+			);
+		} else {
+			return searchMatches && checkboxMatches;
+		}
 	});
 
 	return (
@@ -43,22 +63,22 @@ const BaconHolder = ({ data, displayBaconDetails }) => {
 					type="text"
 					placeholder="Search For Your Favorite Brand, or Style..."
 					value={searchInput}
-					onChange={(event) => setSearchInput(event.target.value)}
+					onChange={(e) => setSearchInput(e.target.value)}
 					className="text-center border-2 mt-2 border-gray-200 bg-white hover:cursor-text w-[80%] overflow-ellipsis"
 				/>
 				<div className="flex flex-col items-center">
-					<label className="flex flex-col font-bold uppercase text-center text-xs mt-4 text-[#F9BB38]">
+					<label className="flex flex-col font-bold text-center text-xs mt-4 text-[#F9BB38]">
 						Show Only Resealable Bacon <br></br> ⬇
 					</label>
 					<input
 						type="checkbox"
 						id="onlyResealableBaconAllowed"
 						value={checkboxInput}
-						onChange={(event) => setCheckboxInput(event.target.checked)}
+						onChange={(e) => setCheckboxInput(e.target.checked)}
 						className="form-checkbox w-fit h-5 mb-6 hover:cursor-pointer"
 					/>
 				</div>
-				<div>{companyButtons}</div>
+				<div className="flex flex-col gap-3">{companyButtons}</div>
 			</div>
 			<div className="flex flex-wrap justify-center gap-8 w-[85%] mt-4 ml-[15%]">
 				{filteredSearchData.map((item) => {
