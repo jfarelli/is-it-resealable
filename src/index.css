@@ -5,14 +5,13 @@
 * {
 	cursor: default;
 	font-family: 'Aclonica';
-	background-color: #fdf2e3;
 }
 
 button {
 	background-color: #9b4428;
 	color: #f9bb38;
 	padding: 10px;
-	border-radius: 10px;
+	border-radius: 50px;
 }
 
 button:hover {

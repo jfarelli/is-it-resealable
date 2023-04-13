@@ -29,7 +29,7 @@ const Landing = () => {
 	};
 
 	return (
-		<div className="flex flex-col text-center h-screen items-center justify-center p-10 gap-y-8">
+		<div className="flex flex-col text-center h-screen items-center justify-center p-10 gap-y-8 bg-[#fdf2e3]">
 			<h2 className="font-bold text-[#9B4428] text-3xl">
 				The bacon lovers website
 				<br></br>

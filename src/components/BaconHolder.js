@@ -12,6 +12,19 @@ const BaconHolder = ({ data, displayBaconDetails }) => {
 			.localeCompare(b.companyName.toUpperCase());
 	});
 
+	const companyButtons = () => {
+		return sortedData.reduce((acc, data) => {
+            console.log('DATA: ', data.companyName);
+            if (!acc.includes(data.companyName)) {
+                acc[data.companyName] = []
+            }
+            acc.push(data.companyName)
+            return acc
+        }, []);
+	};
+
+    console.log("COMPANYBUTTONS", companyButtons());
+
 	const searchInputLower = searchInput.toLowerCase();
 	const filteredSearchData = sortedData.filter((item) => {
 		const searchMatches = ['companyName', 'baconStyle'].some((prop) =>
@@ -24,27 +37,30 @@ const BaconHolder = ({ data, displayBaconDetails }) => {
 	});
 
 	return (
-		<div className="flex flex-col items-center justify-center gap-2 p-4 mt-16">
-			<input
-				type="text"
-				placeholder="Search For Your Favorite Brand, or Style..."
-				value={searchInput}
-				onChange={(event) => setSearchInput(event.target.value)}
-				className="text-center mt-5 border-2 border-gray-200 bg-white hover:cursor-text w-[30%] overflow-ellipsis"
-			/>
-			<div className="flex flex-col items-center">
-				<label className="flex flex-col font-bold uppercase text-center">
-					Or, Click below to Show Only Resealable Bacon
-				</label>
+		<div className="flex mt-16 bg-[#fdf2e3]">
+			<div className="flex flex-col items-center bg-[#9B4428] h-screen w-[15%] fixed pt-4">
 				<input
-					type="checkbox"
-					id="onlyResealableBaconAllowed"
-					value={checkboxInput}
-					onChange={(event) => setCheckboxInput(event.target.checked)}
-					className="form-checkbox w-fit h-5 mb-6 hover:cursor-pointer"
+					type="text"
+					placeholder="Search For Your Favorite Brand, or Style..."
+					value={searchInput}
+					onChange={(event) => setSearchInput(event.target.value)}
+					className="text-center border-2 mt-2 border-gray-200 bg-white hover:cursor-text w-[80%] overflow-ellipsis"
 				/>
+				<div className="flex flex-col items-center">
+					<label className="flex flex-col font-bold uppercase text-center text-xs mt-4 text-[#F9BB38]">
+						Show Only Resealable Bacon <br></br> ⬇
+					</label>
+					<input
+						type="checkbox"
+						id="onlyResealableBaconAllowed"
+						value={checkboxInput}
+						onChange={(event) => setCheckboxInput(event.target.checked)}
+						className="form-checkbox w-fit h-5 mb-6 hover:cursor-pointer"
+					/>
+				</div>
+				<div>{companyButtons}</div>
 			</div>
-			<div className="flex flex-wrap justify-center gap-8 w-screen">
+			<div className="flex flex-wrap justify-center gap-8 w-[85%] mt-4 ml-[15%]">
 				{filteredSearchData.map((item) => {
 					return (
 						<SingleBacon
