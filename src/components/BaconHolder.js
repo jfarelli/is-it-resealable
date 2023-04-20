@@ -2,6 +2,12 @@ import React from 'react';
 import SingleBacon from './SingleBacon';
 import { useState } from 'react';
 
+
+// --------------------------------------------------------------------------
+// CREATE FUNCTIONALITY TO DISABLE CHECKBOX WHEN COMPANY BUTTON IS CLICKED!!!
+// --------------------------------------------------------------------------
+
+
 const BaconHolder = ({ data, displayBaconDetails }) => {
 	const [searchInput, setSearchInput] = useState('');
 	const [checkboxInput, setCheckboxInput] = useState(false);
@@ -31,7 +37,7 @@ const BaconHolder = ({ data, displayBaconDetails }) => {
 			id={name}
 			onClick={filterOnButtonClick}
 			className={`h-[2em] text-sm flex items-center justify-center transition duration-270 ease-in-out ${
-				selectedCompany === name ? 'bg-[#75331d]' : 'bg-[#9B4428]'
+				selectedCompany === name ? 'bg-[#F9BB38] text-[#9B4428]' : 'bg-[#9B4428]'
 			}`}
 		>
 			{name}
