@@ -20,7 +20,10 @@ const SingleBacon = ({
 	};
 
 	return (
-		<div className="flex flex-col items-center justify-between text-center w-[22%] h-[24em] shadow-sm shadow-gray-900 transition duration-270 ease-in-out rounded-tl-2xl rounded-br-2xl hover:shadow-md hover:shadow-gray-900">
+		<div
+			className="flex flex-col items-center justify-between text-center w-[22%] h-[24em] shadow-sm shadow-gray-900 transition duration-270 ease-in-out rounded-tl-2xl rounded-br-2xl hover:shadow-md hover:shadow-gray-900"
+			data-testid="singleBacon"
+		>
 			<img
 				src={`http://localhost:8000/images/${image}`}
 				alt={`${companyName} ${baconStyle} Bacon`}
@@ -43,4 +46,3 @@ const SingleBacon = ({
 };
 
 export default SingleBacon;
-// className="bg-[#9B4428] text-[#F9BB38] p-2 w-auto rounded-lg text-md hover:bg-[#F9BB38] hover:text-[#9B4428] hover:shadow-md hover:shadow-gray-700"

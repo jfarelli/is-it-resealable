@@ -2,12 +2,6 @@ import React from 'react';
 import SingleBacon from './SingleBacon';
 import { useState } from 'react';
 
-
-// --------------------------------------------------------------------------
-// CREATE FUNCTIONALITY TO DISABLE CHECKBOX WHEN COMPANY BUTTON IS CLICKED!!!
-// --------------------------------------------------------------------------
-
-
 const BaconHolder = ({ data, displayBaconDetails }) => {
 	const [searchInput, setSearchInput] = useState('');
 	const [checkboxInput, setCheckboxInput] = useState(false);
@@ -35,9 +29,12 @@ const BaconHolder = ({ data, displayBaconDetails }) => {
 		<button
 			key={name}
 			id={name}
+            data-testid="companyButtons"
 			onClick={filterOnButtonClick}
 			className={`h-[2em] text-sm flex items-center justify-center transition duration-270 ease-in-out ${
-				selectedCompany === name ? 'bg-[#F9BB38] text-[#9B4428]' : 'bg-[#9B4428]'
+				selectedCompany === name
+					? 'bg-[#F9BB38] text-[#9B4428]'
+					: 'bg-[#9B4428]'
 			}`}
 		>
 			{name}
@@ -69,22 +66,28 @@ const BaconHolder = ({ data, displayBaconDetails }) => {
 					type="text"
 					placeholder="Search For Your Favorite Brand, or Style..."
 					value={searchInput}
+					aria-label="search-input"
 					onChange={(e) => setSearchInput(e.target.value)}
 					className="text-center border-2 mt-2 border-gray-200 bg-white hover:cursor-text w-[80%] overflow-ellipsis"
 				/>
 				<div className="flex flex-col items-center">
-					<label className="flex flex-col font-bold text-center text-xs mt-4 text-[#F9BB38]">
+					<label
+						className="flex flex-col font-bold text-center text-xs mt-4 text-[#F9BB38]"
+					>
 						Show Only Resealable Bacon <br></br> ⬇
 					</label>
 					<input
 						type="checkbox"
 						id="onlyResealableBaconAllowed"
+						data-testid="checkboxInput"
 						value={checkboxInput}
 						onChange={(e) => setCheckboxInput(e.target.checked)}
 						className="form-checkbox w-fit h-5 mb-6 hover:cursor-pointer"
 					/>
 				</div>
-				<div className="flex flex-col gap-3">{companyButtons}</div>
+				<div className="flex flex-col gap-3">
+					{companyButtons}
+				</div>
 			</div>
 			<div className="flex flex-wrap justify-center gap-8 w-[85%] mt-4 ml-[15%]">
 				{filteredSearchData.map((item) => {
