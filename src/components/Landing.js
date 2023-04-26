@@ -29,21 +29,21 @@ const Landing = () => {
 	};
 
 	return (
-		<div className="flex flex-col text-center h-screen items-center justify-center px-10 gap-y-8 bg-[#fdf2e3] text-[#9B4428]">
+		<div className="flex flex-col text-center h-screen items-center justify-center gap-y-8 bg-[#fdf2e3] text-[#9B4428]">
 			<h2 className="font-bold text-2xl sm:text-3xl">
-				The bacon lovers website
+				The bacon lovers website that dares to ask
 				<br></br>
-				that dares to asks one of the most important question:
+				one of the most important packaging questions:
 			</h2>
 			<div
 				data-testid="resealableTextBackground"
 				id="resealableTextBackground"
-				className="font-bold bg-[#F9BB38] py-2 px-10 rounded-tl-3xl rounded-br-3xl transition duration-270 ease-in-out"
+				className="font-bold bg-[#F9BB38] py-2 px-6 rounded-tl-3xl rounded-br-3xl transition duration-270 ease-in-out"
 			>
 				<h1
 					data-testid="resealableText"
 					id="resealableText"
-					className="bg-[#F9BB38] pt-1 text-3xl transition duration-270 ease-in-out sm:text-6xl sm:pt-3"
+					className="bg-[#F9BB38] pt-1 sm:pt-2 text-6xl transition duration-270 ease-in-out"
 				>
 					IS IT RESEALABLE???
 				</h1>
@@ -54,15 +54,16 @@ const Landing = () => {
 				<br></br>
 				Search and filter by brand, or bacon style!
 			</h3>
-
-			<button
-				id="getAnswersButton"
-				className="p-2 sm:p-4 text-1xl sm:text-3xl transition duration-270 ease-in-out"
-				onMouseOver={colorChangeOver}
-				onMouseOut={colorChangeOut}
-			>
-				<Link className="hover:cursor-pointer" to="/bacon-main">Get Answers!</Link>
-			</button>
+			<Link to="/bacon-main">
+				<button
+					id="getAnswersButton"
+					className="p-2 sm:p-4 text-1xl sm:text-3xl transition duration-270 ease-in-out"
+					onMouseOver={colorChangeOver}
+					onMouseOut={colorChangeOut}
+				>
+					Get Answers!
+				</button>
+			</Link>
 		</div>
 	);
 };
