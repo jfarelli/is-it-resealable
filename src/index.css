@@ -16,12 +16,10 @@ button {
 	color: #f9bb38;
 	padding: 10px;
 	border-radius: 50px;
-    outline: .25px solid #f9bb38;
 }
 
 button:hover {
 	background-color: #f9bb38;
 	color: #9b4428;
-	box-shadow: 0 1px 2px;
-    outline: .25px solid #9b4428;
+	box-shadow: 0 0 5px;
 }

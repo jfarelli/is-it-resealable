@@ -8,7 +8,7 @@ const Header = ({ scrolled }) => {
 			}`}
 		>
 			<Link to="/">
-				<h1 className="bg-[#F9BB38] text-3xl hover:cursor-pointer">
+				<h1 className="bg-[#F9BB38] text-4xl hover:cursor-pointer">
 					Is Your Bacon Resealable???
 				</h1>
 			</Link>

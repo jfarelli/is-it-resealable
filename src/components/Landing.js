@@ -33,7 +33,7 @@ const Landing = () => {
 			<h2 className="font-bold text-3xl">
 				The bacon lovers website
 				<br></br>
-				that dares to asks one of the most important questions:
+				that dares to asks one of the most important question:
 			</h2>
 			<div
 				data-testid="resealableTextBackground"
@@ -43,7 +43,7 @@ const Landing = () => {
 				<h1
 					data-testid="resealableText"
 					id="resealableText"
-					className="bg-[#F9BB38] text-6xl transition duration-270 ease-in-out"
+					className="bg-[#F9BB38] pt-3 text-6xl transition duration-270 ease-in-out"
 				>
 					IS IT RESEALABLE???
 				</h1>
