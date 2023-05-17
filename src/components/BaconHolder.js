@@ -29,9 +29,9 @@ const BaconHolder = ({ data, displayBaconDetails }) => {
 		<button
 			key={name}
 			id={name}
-            data-testid="companyButtons"
+            data-testid="companyButton"
 			onClick={filterOnButtonClick}
-			className={`h-[2em] text-sm flex items-center justify-center transition duration-270 ease-in-out ${
+			className={`h-[2em] text-lg p-4 flex items-center justify-center transition duration-270 ease-in-out ${
 				selectedCompany === name
 					? 'bg-[#F9BB38] text-[#9B4428]'
 					: 'bg-[#9B4428]'
@@ -61,7 +61,7 @@ const BaconHolder = ({ data, displayBaconDetails }) => {
 
 	return (
 		<div className="flex mt-16 bg-[#fdf2e3]">
-			<div className="flex flex-col items-center bg-[#9B4428] h-screen w-[15%] fixed pt-4">
+			<div className="flex flex-col items-center bg-[#9B4428] h-screen w-[35%] sm:w-[15%] fixed pt-4">
 				<input
 					type="text"
 					placeholder="Search For Your Favorite Brand, or Style..."
@@ -72,9 +72,9 @@ const BaconHolder = ({ data, displayBaconDetails }) => {
 				/>
 				<div className="flex flex-col items-center">
 					<label
-						className="flex flex-col font-bold text-center text-xs mt-4 text-[#F9BB38]"
+						className="flex flex-col font-bold text-center text-md mt-4 text-[#F9BB38]"
 					>
-						Show Only Resealable Bacon <br></br> ⬇
+						Show Only Resealable Bacon
 					</label>
 					<input
 						type="checkbox"
@@ -82,14 +82,14 @@ const BaconHolder = ({ data, displayBaconDetails }) => {
 						data-testid="checkboxInput"
 						value={checkboxInput}
 						onChange={(e) => setCheckboxInput(e.target.checked)}
-						className="form-checkbox w-fit h-5 mb-6 hover:cursor-pointer"
+						className="form-checkbox w-5 h-5 mb-6 hover:cursor-pointer"
 					/>
 				</div>
 				<div className="flex flex-col gap-3">
 					{companyButtons}
 				</div>
 			</div>
-			<div className="flex flex-wrap justify-center gap-8 w-[85%] mt-4 ml-[15%]">
+			<div className="flex flex-wrap justify-center gap-7 mt-4 ml-[15%]">
 				{filteredSearchData.map((item) => {
 					return (
 						<SingleBacon

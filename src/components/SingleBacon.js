@@ -27,7 +27,7 @@ const SingleBacon = ({
 			<img
 				src={`http://localhost:8000/images/${image}`}
 				alt={`${companyName} ${baconStyle} Bacon`}
-				className="h-60 rounded-tl-2xl rounded-br-2xl"
+				className="h-60 rounded-tl-2xl rounded-br-2xl "
 			/>
 			<h3 className="font-bold text-lg">{companyName}</h3>
 			<p className="italic">{baconStyle}</p>
@@ -36,9 +36,9 @@ const SingleBacon = ({
 				<button
 					id={id}
 					onClick={handleSelectedBacon}
-					className="w-auto h-[2.5em] text-xs flex items-center justify-center mb-2 transition duration-270 ease-in-out"
+					className="w-auto h-[2.5em] text-md flex items-center justify-center mb-2 p-4 transition duration-270 ease-in-out"
 				>
-					{companyName}'s Bacon Bits (Details)
+					{companyName}'s Details
 				</button>
 			</Link>
 		</div>

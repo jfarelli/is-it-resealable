@@ -43,7 +43,7 @@ const Landing = () => {
 				<h1
 					data-testid="resealableText"
 					id="resealableText"
-					className="bg-[#F9BB38] pt-1 sm:pt-2 text-6xl transition duration-270 ease-in-out"
+					className="bg-[#F9BB38] pt-1 sm:pt-2 text-3xl sm:text-6xl transition duration-270 ease-in-out"
 				>
 					IS IT RESEALABLE???
 				</h1>
@@ -57,7 +57,7 @@ const Landing = () => {
 			<Link to="/bacon-main">
 				<button
 					id="getAnswersButton"
-					className="p-2 sm:p-4 text-1xl sm:text-3xl transition duration-270 ease-in-out"
+					className="p-2 sm:p-3 text-1xl sm:text-3xl transition duration-270 ease-in-out"
 					onMouseOver={colorChangeOver}
 					onMouseOut={colorChangeOut}
 				>

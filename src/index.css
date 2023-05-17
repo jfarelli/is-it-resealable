@@ -5,6 +5,7 @@
 * {
 	cursor: default;
 	font-family: 'Aclonica';
+
 }
 
 body {
@@ -14,7 +15,6 @@ body {
 button {
 	background-color: #9b4428;
 	color: #f9bb38;
-	padding: 10px;
 	border-radius: 50px;
 }
 
@@ -22,4 +22,10 @@ button:hover {
 	background-color: #f9bb38;
 	color: #9b4428;
 	box-shadow: 0 0 5px;
+}
+
+img {
+    aspect-ratio: 3/2;
+    /* object-fit: contain; */
+    mix-blend-mode:darken;
 }
