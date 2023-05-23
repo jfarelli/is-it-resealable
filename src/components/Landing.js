@@ -48,7 +48,7 @@ const Landing = () => {
 					IS IT RESEALABLE???
 				</h1>
 			</div>
-			<h3 className="font-bold sm:text-xl">
+			<h3 data-testid='prompt-text' className="font-bold sm:text-xl">
 				After clicking the button below, you’ll be led to a page where you can
 				start getting answers!
 				<br></br>
