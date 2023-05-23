@@ -60,7 +60,7 @@ const BaconHolder = ({ data, displayBaconDetails }) => {
 	});
 
 	return (
-		<div className="flex mt-16 bg-[#fdf2e3]">
+		<div className="flex mt-16 mb-4 bg-[#fdf2e3]">
 			<div className="flex flex-col items-center bg-[#9B4428] h-screen w-[35%] sm:w-[15%] fixed pt-4">
 				<input
 					type="text"
