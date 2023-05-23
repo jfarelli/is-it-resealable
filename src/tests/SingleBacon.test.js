@@ -3,53 +3,121 @@ import '@testing-library/jest-dom';
 import BaconHolder from '../components/BaconHolder';
 import Header from '../components/Header';
 import { BrowserRouter } from 'react-router-dom';
+// import useSound from 'use-sound';
+
+
+const useSound = jest.fn().mockReturnValue([jest.fn()]);
+
+
+const mockData = [
+	{
+		id: 1,
+		companyName: 'Big Bill',
+		baconStyle: 'Crispy',
+		resealable: '❌',
+		image: 'mockData.jpg',
+		displayBaconDetails: jest.fn(),
+	},
+];
 
 describe('SingleBacon', () => {
-	const mockData = [
-		{
-			id: 1,
-			companyName: 'Good Bacon Company A',
-			baconStyle: 'Style 1 - Thick Cut',
-			resealable: '✅',
-			image: 'https://example.com/image1.png',
-			displayBaconDetails: jest.fn(),
-		},
-	];
-
-	test('renders the SingleBacon component', () => {
+	it('renders correctly', () => {
 		render(
 			<>
 				<Header />
 				<BaconHolder
 					data={mockData}
-					displayBaconDetails={mockData.displayBaconDetails}
+					displayBaconDetails={mockData[0].displayBaconDetails}
 				/>
 			</>,
 			{ wrapper: BrowserRouter }
 		);
+		const singleBacon = screen.getByTestId('singleBacon');
+		const companyName = screen.getByTestId('company-name');
+		const baconStyle = screen.getByText('Crispy');
+		const resealable = screen.getByText('IS IT RESEALABLE? ❌');
+		const button = screen.getByText("Big Bill's Details");
 
-		const singleBacon = screen.getAllByTestId('singleBacon');
-		expect(singleBacon).toHaveLength(1);
+		expect(singleBacon).toBeInTheDocument();
+		expect(companyName).toBeInTheDocument();
+		expect(baconStyle).toBeInTheDocument();
+		expect(resealable).toBeInTheDocument();
+		expect(button).toBeInTheDocument();
 	});
 
-	test('calls displayBaconDetails with the correct id when the button is clicked', () => {
+	test('triggers handleSelectedBacon correctly when button is clicked', () => {
 		render(
 			<>
 				<Header />
 				<BaconHolder
 					data={mockData}
-					displayBaconDetails={mockData.displayBaconDetails}
+					displayBaconDetails={mockData[0].displayBaconDetails}
 				/>
 			</>,
 			{ wrapper: BrowserRouter }
 		);
+		const button = screen.getByText("Big Bill's Details");
 
-		const button = screen.getByTestId(
-			`companyButton`
-		);
-        expect(button).toBeInTheDocument()
 		fireEvent.click(button);
-		// expect(mockData.displayBaconDetails).toHaveBeenCalledWith(mockData.id);
-        expect(mockData.boo).toHaveBeenCalled()
+
+		expect(mockData[0].displayBaconDetails).toHaveBeenCalledTimes(1);
+		expect(mockData[0].displayBaconDetails).toHaveBeenCalledWith('1');
 	});
+
+	// // WIP: CAN'T GET THE useSound hook mocked properly
+	// test.only('plays boo sound when resealable is ❌', () => {
+	// 	const mockBoo = jest.fn();
+	// 	jest.mock('use-sound', () => ({
+	// 		__esModule: true,
+	// 		default: jest.fn().mockReturnValue([mockBoo]),
+	// 	}));
+
+	// 	render(
+	// 		<>
+	// 			<Header />
+	// 			<BaconHolder
+	// 				data={mockData}
+	// 				displayBaconDetails={mockData[0].displayBaconDetails}
+	// 			/>
+	// 		</>,
+	// 		{ wrapper: BrowserRouter }
+	// 	);
+	// 	const button = screen.getByText("Big Bill's Details");
+
+	// 	fireEvent.click(button);
+
+	// 	expect(mockBoo).toHaveBeenCalledTimes(1);
+	// });
+
+
+    // // WIP: CAN'T GET THE useSound hook mocked properly
+	// it('plays cheer sound when resealable is not ❌', () => {
+	// 	const mockData2 = [
+	// 		{
+	// 			id: 2,
+	// 			companyName: 'Small Sally',
+	// 			baconStyle: 'Thick Cut',
+	// 			resealable: '✅',
+	// 			image: 'mockData.jpg',
+	// 			displayBaconDetails: jest.fn(),
+	// 		},
+	// 	];
+
+	// 	render(
+	// 		<>
+	// 			<Header />
+	// 			<BaconHolder
+	// 				data={mockData2}
+	// 				displayBaconDetails={mockData2[0].displayBaconDetails}
+	// 			/>
+	// 		</>,
+	// 		{ wrapper: BrowserRouter }
+	// 	);
+
+	// 	const button = screen.getByText("Small Sally's Details");
+
+	// 	fireEvent.click(button);
+
+	// 	expect(useSound).toHaveBeenCalledTimes(1);
+	// });
 });
