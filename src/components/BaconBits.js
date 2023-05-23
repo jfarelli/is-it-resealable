@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import SocialMediaButtons from './SocialMediaButtons';
 
 const BaconBits = ({ selectedBacon }) => {
 	return (
@@ -54,47 +55,7 @@ const BaconBits = ({ selectedBacon }) => {
 							Media for giving the people what they want!
 						</p>
 					)}
-					<div className="flex justify-center gap-8">
-						{selectedBacon.companyContacts.website ? (
-							<Link to={selectedBacon.companyContacts.website} target="_blank">
-								<button className="p-2 text-xl w-[125%] transition duration-270 ease-in-out">
-									Website
-								</button>
-							</Link>
-						) : (
-							''
-						)}
-						{selectedBacon.companyContacts.facebook ? (
-							<Link to={selectedBacon.companyContacts.facebook} target="_blank">
-								<button className="p-2 text-xl w-[125%] transition duration-270 ease-in-out">
-									Facebook
-								</button>
-							</Link>
-						) : (
-							''
-						)}
-						{selectedBacon.companyContacts.twitter ? (
-							<Link to={selectedBacon.companyContacts.twitter} target="_blank">
-								<button className="p-2 text-xl w-[125%] transition duration-270 ease-in-out">
-									Twitter
-								</button>
-							</Link>
-						) : (
-							''
-						)}
-						{selectedBacon.companyContacts.instagram ? (
-							<Link
-								to={selectedBacon.companyContacts.instagram}
-								target="_blank"
-							>
-								<button className="p-2 text-xl w-[125%] transition duration-270 ease-in-out">
-									Instagram
-								</button>
-							</Link>
-						) : (
-							''
-						)}
-					</div>
+					<SocialMediaButtons selectedBacon={selectedBacon} />
 					{selectedBacon.companyContacts.phone &&
 					selectedBacon.resealable === '❌' ? (
 						<>
