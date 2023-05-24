@@ -111,7 +111,7 @@ describe('BaconHolder', () => {
 			{ wrapper: BrowserRouter }
 		);
 
-		const companyButton = screen.getAllByTestId(/companyButtons/i);
+		const companyButton = screen.getAllByTestId(/companyButton/i);
 		expect(companyButton).toHaveLength(3);
 		expect(companyButton).not.toHaveLength(0);
 		expect(companyButton).not.toHaveLength(1);
