@@ -14,19 +14,19 @@ const ResealableConditionals = ({ selectedBacon }) => {
 				) : (
 					<p>
 						{selectedBacon.companyName}{' '}
-						<span className="uppercase text-green-600">believes</span> in
+						<span className="uppercase text-green-600 text-3xl">believes</span> in
 						resealable packaging for their{' '}
 						<span className="italic">{selectedBacon.baconStyle}</span>!
 					</p>
 				)}
 			</h4>
 			{selectedBacon.resealable === '❌' ? (
-				<p className="flex flex-col items-center text-xl mb-3">
+				<p className="text-xl mb-3">
 					Visit {selectedBacon.companyName} on social media and start a
 					conversation!
 				</p>
 			) : (
-				<p className="mb-2">
+				<p className="text-xl mb-2">
 					Please follow and appreciate {selectedBacon.companyName} on Social
 					Media for giving the people what they want!
 				</p>

@@ -52,7 +52,7 @@ const Landing = () => {
 				After clicking the button below, you’ll be led to a page where you can
 				start getting answers!
 				<br></br>
-				Search and filter by brand, or bacon style!
+				Search and filter by brand, bacon style, or resealability!
 			</h3>
 			<Link to="/bacon-main">
 				<button
