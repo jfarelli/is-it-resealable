@@ -3,7 +3,10 @@ import { Link } from 'react-router-dom';
 
 const SocialMediaButtons = ({ selectedBacon }) => {
 	return (
-		<div className="flex justify-center gap-8">
+		<div
+			data-testid="social-media-buttons"
+			className="flex justify-center gap-8"
+		>
 			{selectedBacon.companyContacts.website ? (
 				<Link to={selectedBacon.companyContacts.website} target="_blank">
 					<button className="p-2 text-xl w-[125%] transition duration-270 ease-in-out">

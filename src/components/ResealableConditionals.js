@@ -2,7 +2,10 @@ import SocialMediaButtons from './SocialMediaButtons';
 
 const ResealableConditionals = ({ selectedBacon }) => {
 	return (
-		<div className="flex flex-col items-center mt-[8%]">
+		<div
+			data-testid="resealable-conditionals"
+			className="flex flex-col items-center mt-[8%]"
+		>
 			<h4 className="font-bold mb-1 text-2xl">
 				{selectedBacon.resealable === '❌' ? (
 					<p>
@@ -14,8 +17,8 @@ const ResealableConditionals = ({ selectedBacon }) => {
 				) : (
 					<p>
 						{selectedBacon.companyName}{' '}
-						<span className="uppercase text-green-600 text-3xl">believes</span> in
-						resealable packaging for their{' '}
+						<span className="uppercase text-green-600 text-3xl">believes</span>{' '}
+						in resealable packaging for their{' '}
 						<span className="italic">{selectedBacon.baconStyle}</span>!
 					</p>
 				)}
