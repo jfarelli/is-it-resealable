@@ -4,19 +4,17 @@ import ResealableConditionals from './ResealableConditionals';
 const BaconBits = ({ selectedBacon }) => {
 	return (
 		<div className="mt-[5%] flex flex-col items-center bg-[#fdf2e3]">
-			<button className="text-xl w-40 transition duration-270 ease-in-out">
-				<Link className="hover:cursor-pointer" to="/bacon-main">
+			<Link to="/bacon-main">
+				<button className="text-xl mt-[5%] w-40 transition duration-270 ease-in-out">
 					Back to Search
-				</Link>
-			</button>
+				</button>
+			</Link>
 			<div className="flex flex-col">
 				<div className="flex flex-col flex-wrap items-center w-screen justify-center">
 					{selectedBacon.resealable === '❌' ? (
-						<h1 className="text-8xl mt-10 text-red-600 font-bold">NOPE!</h1>
+						<h1 className="text-8xl mt-5 text-red-600 font-bold">NOPE!</h1>
 					) : (
-						<h1 className="text-8xl mt-20 text-green-600 font-bold">
-							YUUUUUP!
-						</h1>
+						<h1 className="text-8xl mt-8 text-green-600 font-bold">YUUUUUP!</h1>
 					)}
 					<div className="w-[25%] h-40 aspect-w-1 aspect-h-1 mt-[1%]">
 						<img

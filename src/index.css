@@ -5,7 +5,6 @@
 * {
 	cursor: default;
 	font-family: 'Aclonica';
-
 }
 
 body {
@@ -26,6 +25,5 @@ button:hover {
 
 img {
     aspect-ratio: 3/2;
-    /* object-fit: contain; */
-    mix-blend-mode:darken;
+    mix-blend-mode: darken;
 }

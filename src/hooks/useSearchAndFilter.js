@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-const useSearchAndFilter = ( data ) => {
+const useSearchAndFilter = (data) => {
 	const [searchInput, setSearchInput] = useState('');
 	const [checkboxInput, setCheckboxInput] = useState(false);
 	const [selectedCompany, setSelectedCompany] = useState('');
@@ -39,9 +39,9 @@ const useSearchAndFilter = ( data ) => {
 		</button>
 	));
 
-	const searchInputLower = searchInput.toLowerCase();
-
 	const filteredSearchData = sortedData.filter((item) => {
+		const searchInputLower = searchInput.toLowerCase();
+
 		const searchMatches = ['companyName', 'baconStyle'].some((prop) =>
 			item[prop].toLowerCase().includes(searchInputLower)
 		);
@@ -57,7 +57,15 @@ const useSearchAndFilter = ( data ) => {
 		}
 	});
 
-	return [searchInput, setSearchInput, checkboxInput, setCheckboxInput, selectedCompany, companyButtons, filteredSearchData];
+	return [
+		searchInput,
+		setSearchInput,
+		checkboxInput,
+		setCheckboxInput,
+		selectedCompany,
+		companyButtons,
+		filteredSearchData,
+	];
 };
 
 export default useSearchAndFilter;
