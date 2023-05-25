@@ -72,7 +72,7 @@ const BaconHolder = ({ data, displayBaconDetails }) => {
 				/>
 				<div className="flex flex-col items-center">
 					<label
-						className="flex flex-col font-bold text-center text-md mt-4 text-[#F9BB38]"
+						className="flex flex-col font-bold text-center text-md mt-4 text-[#F9BB38] italic"
 					>
 						Show Only Resealable Bacon
 					</label>

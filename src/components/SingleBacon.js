@@ -21,15 +21,17 @@ const SingleBacon = ({
 
 	return (
 		<div
-			className="flex flex-col items-center justify-between text-center w-[22%] h-[24em] shadow-sm shadow-gray-900 transition duration-270 ease-in-out rounded-tl-2xl rounded-br-2xl hover:shadow-md hover:shadow-gray-900"
+			className="flex flex-col items-center text-center w-[22%] h-[23em] shadow-sm shadow-gray-900 transition duration-270 ease-in-out rounded-2xl hover:shadow-md hover:shadow-gray-900"
 			data-testid="singleBacon"
 		>
 			<img
 				src={`http://localhost:8000/images/${image}`}
 				alt={`${companyName} ${baconStyle} Bacon`}
-				className="h-60 rounded-tl-2xl rounded-br-2xl "
+				className="h-60 object-contain rounded-tl-2xl rounded-tr-2xl"
 			/>
-			<h3 data-testid="company-name" className="font-bold text-lg">{companyName}</h3>
+			<h3 data-testid="company-name" className="font-bold text-lg">
+				{companyName}
+			</h3>
 			<p className="italic">{baconStyle}</p>
 			<p className="font-bold">IS IT RESEALABLE? {resealable}</p>
 			<Link to="/bacon-bits">
