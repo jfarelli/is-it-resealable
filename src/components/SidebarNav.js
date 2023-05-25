@@ -13,7 +13,7 @@ const SidebarNav = ({
 				value={searchInput}
 				aria-label="search-input"
 				onChange={(e) => setSearchInput(e.target.value)}
-				className="text-center rounded-xl border-2 mt-2 bg-white hover:cursor-text w-[85%] overflow-ellipsis"
+				className="w-[85%] overflow-ellipsis text-center rounded-xl border-2 mt-2 bg-white hover:cursor-text"
 			/>
 			<div className="flex flex-col items-center">
 				<label className="flex flex-col font-bold text-center text-md mt-2 text-[#F9BB38] italic">

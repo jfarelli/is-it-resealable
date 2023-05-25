@@ -8,6 +8,7 @@ const BaconHolder = ({ data, displayBaconDetails }) => {
 		setSearchInput,
 		checkboxInput,
 		setCheckboxInput,
+		// eslint-disable-next-line no-unused-vars
 		selectedCompany,
 		companyButtons,
 		filteredSearchData,
