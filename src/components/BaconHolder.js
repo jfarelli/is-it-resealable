@@ -14,7 +14,6 @@ const BaconHolder = ({ data, displayBaconDetails }) => {
 		filteredSearchData,
 	] = useSearchAndFilter(data);
 
-
 	return (
 		<div className="flex mt-16 mb-4 bg-[#fdf2e3]">
 			<SidebarNav

@@ -38,7 +38,7 @@ const SingleBacon = ({
 				<button
 					id={id}
 					onClick={handleSelectedBacon}
-					className="w-auto h-[2.5em] text-md flex items-center justify-center mb-2 p-4 transition duration-270 ease-in-out"
+					className="w-auto h-[2.5em] text-md flex items-center justify-center mb-2 p-4"
 				>
 					{companyName}'s Details
 				</button>

@@ -48,7 +48,7 @@ const Landing = () => {
 					IS IT RESEALABLE???
 				</h1>
 			</div>
-			<h3 data-testid='prompt-text' className="font-bold sm:text-xl">
+			<h3 data-testid="prompt-text" className="font-bold sm:text-xl">
 				After clicking the button below, you’ll be led to a page where you can
 				start getting answers!
 				<br></br>
@@ -57,7 +57,7 @@ const Landing = () => {
 			<Link to="/bacon-main">
 				<button
 					id="getAnswersButton"
-					className="p-2 sm:p-3 text-1xl sm:text-3xl transition duration-270 ease-in-out"
+					className="p-2 sm:p-3 text-1xl sm:text-3xl"
 					onMouseOver={colorChangeOver}
 					onMouseOut={colorChangeOut}
 				>

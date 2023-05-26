@@ -15,7 +15,7 @@ const useSearchAndFilter = (data) => {
 		...new Set(sortedData.map((obj) => obj.companyName)),
 	];
 
-	function filterOnButtonClick(e) {
+	const filterOnButtonClick = (e) => {
 		if (selectedCompany === e.target.id) {
 			setSelectedCompany('');
 		} else {
@@ -29,7 +29,7 @@ const useSearchAndFilter = (data) => {
 			id={name}
 			data-testid="companyButton"
 			onClick={filterOnButtonClick}
-			className={`h-[2em] text-lg p-4 flex items-center justify-center transition duration-270 ease-in-out ${
+			className={`h-[2em] text-lg p-4 flex items-center justify-center ${
 				selectedCompany === name
 					? 'bg-[#F9BB38] text-[#9B4428]'
 					: 'bg-[#9B4428]'

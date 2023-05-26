@@ -8,13 +8,15 @@
 }
 
 body {
-    background-color: #fdf2e3;
+	background-color: #fdf2e3;
 }
 
 button {
 	background-color: #9b4428;
 	color: #f9bb38;
 	border-radius: 50px;
+	transition-duration: 150ms;
+	transition-timing-function: ease-in-out;
 }
 
 button:hover {
@@ -24,6 +26,6 @@ button:hover {
 }
 
 img {
-    aspect-ratio: 3/2;
-    mix-blend-mode: darken;
+	aspect-ratio: 3/2;
+	mix-blend-mode: darken;
 }

@@ -9,36 +9,28 @@ const SocialMediaButtons = ({ selectedBacon }) => {
 		>
 			{selectedBacon.companyContacts.website ? (
 				<Link to={selectedBacon.companyContacts.website} target="_blank">
-					<button className="p-2 text-xl w-[125%] transition duration-270 ease-in-out">
-						Website
-					</button>
+					<button className="p-2 text-xl w-[125%]">Website</button>
 				</Link>
 			) : (
 				''
 			)}
 			{selectedBacon.companyContacts.facebook ? (
 				<Link to={selectedBacon.companyContacts.facebook} target="_blank">
-					<button className="p-2 text-xl w-[125%] transition duration-270 ease-in-out">
-						Facebook
-					</button>
+					<button className="p-2 text-xl w-[125%]">Facebook</button>
 				</Link>
 			) : (
 				''
 			)}
 			{selectedBacon.companyContacts.twitter ? (
 				<Link to={selectedBacon.companyContacts.twitter} target="_blank">
-					<button className="p-2 text-xl w-[125%] transition duration-270 ease-in-out">
-						Twitter
-					</button>
+					<button className="p-2 text-xl w-[125%]">Twitter</button>
 				</Link>
 			) : (
 				''
 			)}
 			{selectedBacon.companyContacts.instagram ? (
 				<Link to={selectedBacon.companyContacts.instagram} target="_blank">
-					<button className="p-2 text-xl w-[125%] transition duration-270 ease-in-out">
-						Instagram
-					</button>
+					<button className="p-2 text-xl w-[125%]">Instagram</button>
 				</Link>
 			) : (
 				''

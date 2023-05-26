@@ -5,9 +5,7 @@ import Header from '../components/Header';
 import { BrowserRouter } from 'react-router-dom';
 // import useSound from 'use-sound';
 
-
-const useSound = jest.fn().mockReturnValue([jest.fn()]);
-
+// const useSound = jest.fn().mockReturnValue([jest.fn()]);
 
 const mockData = [
 	{
@@ -89,8 +87,7 @@ describe('SingleBacon', () => {
 	// 	expect(mockBoo).toHaveBeenCalledTimes(1);
 	// });
 
-
-    // // WIP: CAN'T GET THE useSound hook mocked properly
+	// // WIP: CAN'T GET THE useSound hook mocked properly
 	// it('plays cheer sound when resealable is not ❌', () => {
 	// 	const mockData2 = [
 	// 		{

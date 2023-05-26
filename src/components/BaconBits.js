@@ -5,9 +5,7 @@ const BaconBits = ({ selectedBacon }) => {
 	return (
 		<div className="mt-[5%] flex flex-col items-center bg-[#fdf2e3]">
 			<Link to="/bacon-main">
-				<button className="text-xl mt-[5%] w-40 transition duration-270 ease-in-out">
-					Back to Search
-				</button>
+				<button className="text-xl mt-[5%] w-40">Back to Search</button>
 			</Link>
 			<div className="flex flex-col">
 				<div className="flex flex-col flex-wrap items-center w-screen justify-center">

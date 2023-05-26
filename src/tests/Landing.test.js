@@ -106,14 +106,14 @@ describe('Landing', () => {
 			'font-weight: 700',
 			'padding-top: 0.5rem',
 			'padding-bottom: 0.5rem',
-            'transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter',
+			'transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter',
 			'transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1)',
 			'transition-duration: 150ms'
 		);
 
 		expect(screen.getByText(/after clicking the button/i)).toHaveStyle(
 			'font-size: 1.17em',
-            'font-weight: 700'
+			'font-weight: 700'
 		);
 
 		expect(screen.getByText(/get answers/i)).toHaveStyle(
