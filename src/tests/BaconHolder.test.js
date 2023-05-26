@@ -59,7 +59,7 @@ describe('BaconHolder', () => {
 		);
 
 		const searchInput = screen.getByPlaceholderText(
-			/search for your favorite brand, or style/i
+			/search brand, or style/i
 		);
 
 		fireEvent.change(searchInput, { target: { value: 'Style 1' } });
