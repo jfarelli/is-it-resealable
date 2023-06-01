@@ -1,6 +1,11 @@
+import React from 'react';
 import { Link } from 'react-router-dom';
 
-const Header = ({ scrolled }) => {
+interface HeaderProps {
+	scrolled: boolean;
+}
+
+const Header: React.FC<HeaderProps> = ({ scrolled }) => {
 	return (
 		<div
 			data-testid="header-element"
