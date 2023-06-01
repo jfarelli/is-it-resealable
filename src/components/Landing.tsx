@@ -1,30 +1,38 @@
-// import './Landing.css';
+import React from 'react';
 import { Link } from 'react-router-dom';
 
-const Landing = () => {
-	const colorChangeOver = (e) => {
-		if (e.target.id === 'getAnswersButton') {
+const Landing: React.FC = () => {
+	const colorChangeOver = (e: React.MouseEvent<HTMLButtonElement>) => {
+		const target = e.target as HTMLButtonElement;
+
+		if (target.id === 'getAnswersButton') {
 			let resealableBackgroundColor = document.getElementById(
 				'resealableTextBackground'
 			);
 			let resealableTextColor = document.getElementById('resealableText');
 
-			resealableBackgroundColor.style.backgroundColor = '#9B4428';
-			resealableBackgroundColor.style.color = '#F9BB38';
-			resealableTextColor.style.backgroundColor = '#9B4428';
+			if (resealableBackgroundColor && resealableTextColor) {
+				resealableBackgroundColor.style.backgroundColor = '#9B4428';
+				resealableBackgroundColor.style.color = '#F9BB38';
+				resealableTextColor.style.backgroundColor = '#9B4428';
+			}
 		}
 	};
 
-	const colorChangeOut = (e) => {
-		if (e.target.id === 'getAnswersButton') {
+	const colorChangeOut = (e: React.MouseEvent<HTMLButtonElement>) => {
+		const target = e.target as HTMLButtonElement;
+
+		if (target.id === 'getAnswersButton') {
 			let resealableBackgroundColor = document.getElementById(
 				'resealableTextBackground'
 			);
 			let resealableTextColor = document.getElementById('resealableText');
 
-			resealableBackgroundColor.style.backgroundColor = '#F9BB38';
-			resealableBackgroundColor.style.color = '#9B4428';
-			resealableTextColor.style.backgroundColor = '#F9BB38';
+			if (resealableBackgroundColor && resealableTextColor) {
+				resealableBackgroundColor.style.backgroundColor = '#F9BB38';
+				resealableBackgroundColor.style.color = '#9B4428';
+				resealableTextColor.style.backgroundColor = '#F9BB38';
+			}
 		}
 	};
 
