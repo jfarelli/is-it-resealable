@@ -9,7 +9,7 @@ const SocialMediaButtons: React.FC<SocialMediaButtonsProps> = ({
 			data-testid="social-media-buttons"
 			className="flex justify-center gap-8"
 		>
-			{selectedBacon?.companyContacts.website ? (
+			{selectedBacon?.companyContacts?.website ? (
 				<a
 					href={selectedBacon?.companyContacts.website}
 					target="_blank"
@@ -20,7 +20,7 @@ const SocialMediaButtons: React.FC<SocialMediaButtonsProps> = ({
 			) : (
 				''
 			)}
-			{selectedBacon?.companyContacts.facebook ? (
+			{selectedBacon?.companyContacts?.facebook ? (
 				<a
 					href={selectedBacon?.companyContacts.facebook}
 					target="_blank"
@@ -31,7 +31,7 @@ const SocialMediaButtons: React.FC<SocialMediaButtonsProps> = ({
 			) : (
 				''
 			)}
-			{selectedBacon?.companyContacts.twitter ? (
+			{selectedBacon?.companyContacts?.twitter ? (
 				<a
 					href={selectedBacon?.companyContacts.twitter}
 					target="_blank"
@@ -42,7 +42,7 @@ const SocialMediaButtons: React.FC<SocialMediaButtonsProps> = ({
 			) : (
 				''
 			)}
-			{selectedBacon?.companyContacts.instagram ? (
+			{selectedBacon?.companyContacts?.instagram ? (
 				<a
 					href={selectedBacon?.companyContacts.instagram}
 					target="_blank"

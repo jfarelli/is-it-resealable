@@ -2,9 +2,10 @@ import React from 'react';
 import { render, screen } from '@testing-library/react';
 import ResealableConditionals from '../components/ResealableConditionals';
 import { BrowserRouter } from 'react-router-dom';
+import { ResealableConditionalsProps } from '../model';
 
 describe('ResealableConditionals', () => {
-	const selectedBacon = {
+	const selectedBacon: ResealableConditionalsProps['selectedBacon'] = {
 		id: 1,
 		companyName: 'Big Bill',
 		companyContacts: {
@@ -57,10 +58,24 @@ describe('ResealableConditionals', () => {
 		);
 
 		const contactMessage = screen.getByText(/you can even call/i);
-		const phoneText = screen.getByText(selectedBacon.companyContacts.phone);
+		const phoneText = screen.getByText(
+			selectedBacon.companyContacts?.phone ?? ''
+		);
 
 		expect(contactMessage).toBeInTheDocument();
 		expect(phoneText).toBeInTheDocument();
+	});
+
+	test('renders social media buttons for non-resealable bacon', () => {
+		render(
+			<BrowserRouter>
+				<ResealableConditionals selectedBacon={selectedBacon} />
+			</BrowserRouter>
+		);
+
+		const socialMediaButtons = screen.getByTestId('social-media-buttons');
+
+		expect(socialMediaButtons).toBeInTheDocument();
 	});
 
 	test('does not render contact information for resealable bacon', () => {
@@ -73,7 +88,9 @@ describe('ResealableConditionals', () => {
 		);
 
 		const contactMessage = screen.queryByText(/you can even call/i);
-		const phoneText = screen.queryByText(selectedBacon.companyContacts.phone);
+		const phoneText = screen.queryByText(
+			selectedBacon.companyContacts?.phone ?? ''
+		);
 
 		expect(contactMessage).not.toBeInTheDocument();
 		expect(phoneText).not.toBeInTheDocument();
