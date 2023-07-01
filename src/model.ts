@@ -1,6 +1,6 @@
 import { ReactNode } from 'react';
 
-// App
+// App.tsx
 export interface AppProps {
 	baconStyle: string;
 	companyContacts: {
@@ -17,18 +17,9 @@ export interface AppProps {
 	resealable: string;
 }
 
-// BaconBits
+// BaconBits.tsx
 export interface BaconBitsProps {
 	selectedBacon: AppProps | undefined;
-}
-
-// useSearchAndFilter
-export interface BaconDataProps {
-	baconStyle: string;
-	companyName: string;
-	id: string | number | undefined;
-	image: string;
-	resealable: string;
 }
 
 // BaconHolder
@@ -45,34 +36,29 @@ export interface HeaderProps {
 // ResealableConditionals
 export interface ResealableConditionalsProps extends BaconBitsProps {}
 
-// SocialMediaButtons
-export interface SocialMediaButtonsProps extends BaconBitsProps {}
-
 // SideBarNav
 export interface SidebarNavProps {
 	searchInput: string;
 	checkboxInput: boolean;
+	companyButtons: ReactNode;
 	setCheckboxInput: (value: boolean) => void;
 	setSearchInput: (value: string) => void;
-	companyButtons: ReactNode;
 }
 
 // SingleBacon
 export interface SingleBaconProps {
 	id: number | string;
-	companyName: string;
 	baconStyle: string;
-	resealable: string;
+	companyName: string;
 	image: string;
+	resealable: string;
 	displayBaconDetails: (id: number | string) => void;
 }
 
-export interface useSearchAndFilterProps {
-	searchInput: string;
-	setSearchInput: (value: string) => void;
-	checkboxInput: boolean;
-	setCheckboxInput: (value: boolean) => void;
-	selectedCompany: string;
-	companyButtons: React.JSX.Element[];
+// SocialMediaButtons
+export interface SocialMediaButtonsProps extends BaconBitsProps {}
+
+// useSearchAndFilter.tsx
+export interface useSearchAndFilterProps extends SidebarNavProps {
 	filteredSearchData: AppProps[];
 }

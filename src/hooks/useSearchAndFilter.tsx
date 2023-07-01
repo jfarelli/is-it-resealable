@@ -67,7 +67,6 @@ const useSearchAndFilter = (data: AppProps[]): useSearchAndFilterProps => {
 		setSearchInput,
 		checkboxInput,
 		setCheckboxInput,
-		selectedCompany,
 		companyButtons,
 		filteredSearchData,
 	};

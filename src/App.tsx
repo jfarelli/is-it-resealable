@@ -41,7 +41,7 @@ const App: React.FC = () => {
 		if (data) {
 			const foundBacon = data.find((bacon) => {
 				let stringBacon = bacon.id.toString();
-				return stringBacon == id;
+				return stringBacon === id;
 			});
 			setSelectedBacon(foundBacon);
 		}

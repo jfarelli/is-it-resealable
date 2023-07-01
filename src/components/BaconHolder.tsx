@@ -13,8 +13,6 @@ const BaconHolder: React.FC<BaconHolderProps> = ({
 		setSearchInput,
 		checkboxInput,
 		setCheckboxInput,
-		// eslint-disable-next-line no-unused-vars
-		selectedCompany,
 		companyButtons,
 		filteredSearchData,
 	} = useSearchAndFilter(data);
