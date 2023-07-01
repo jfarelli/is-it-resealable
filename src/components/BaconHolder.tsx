@@ -1,9 +1,14 @@
+import React from 'react';
 import SingleBacon from './SingleBacon';
 import SidebarNav from './SidebarNav';
 import useSearchAndFilter from '../hooks/useSearchAndFilter';
+import { AppProps, BaconHolderProps } from '../model';
 
-const BaconHolder = ({ data, displayBaconDetails }) => {
-	const [
+const BaconHolder: React.FC<BaconHolderProps> = ({
+	data,
+	displayBaconDetails,
+}) => {
+	const {
 		searchInput,
 		setSearchInput,
 		checkboxInput,
@@ -12,7 +17,7 @@ const BaconHolder = ({ data, displayBaconDetails }) => {
 		selectedCompany,
 		companyButtons,
 		filteredSearchData,
-	] = useSearchAndFilter(data);
+	} = useSearchAndFilter(data);
 
 	return (
 		<div className="flex mt-16 mb-4 bg-[#fdf2e3]">
@@ -24,7 +29,7 @@ const BaconHolder = ({ data, displayBaconDetails }) => {
 				companyButtons={companyButtons}
 			/>
 			<div className="flex flex-wrap justify-center gap-7 mt-4 ml-[15%]">
-				{filteredSearchData.map((item) => {
+				{filteredSearchData.map((item: AppProps) => {
 					return (
 						<SingleBacon
 							id={item.id}

@@ -6,17 +6,12 @@ import Landing from './components/Landing';
 import Header from './components/Header';
 import BaconHolder from './components/BaconHolder';
 import BaconBits from './components/BaconBits';
-
-interface Bacon {
-	id: number;
-}
+import { AppProps } from './model';
 
 const App: React.FC = () => {
 	const [loading, setLoading] = useState<boolean>(false);
-	const [data, setData] = useState<Bacon[]>([]);
-	const [selectedBacon, setSelectedBacon] = useState<Bacon | undefined>(
-		undefined
-	);
+	const [data, setData] = useState<AppProps[]>([]);
+	const [selectedBacon, setSelectedBacon] = useState<AppProps>(); // LEFT OFF HERE!!!!!! CONSOLE.LOG IN BACONBITS TO SEE WHAT'S BROUGHT IN!!
 	const [scrolled, setScrolled] = useState<boolean>(false);
 
 	useEffect(() => {
@@ -42,9 +37,12 @@ const App: React.FC = () => {
 		};
 	}, []);
 
-	const displayBaconDetails = (id: number) => {
+	const displayBaconDetails = (id: number | string) => {
 		if (data) {
-			const foundBacon = data.find((bacon) => bacon.id == id);
+			const foundBacon = data.find((bacon) => {
+				let stringBacon = bacon.id.toString();
+				return stringBacon == id;
+			});
 			setSelectedBacon(foundBacon);
 		}
 	};

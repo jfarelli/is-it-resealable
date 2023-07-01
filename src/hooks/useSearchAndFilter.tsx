@@ -1,9 +1,10 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
+import { AppProps, useSearchAndFilterProps } from '../model';
 
-const useSearchAndFilter = (data) => {
-	const [searchInput, setSearchInput] = useState('');
-	const [checkboxInput, setCheckboxInput] = useState(false);
-	const [selectedCompany, setSelectedCompany] = useState('');
+const useSearchAndFilter = (data: AppProps[]): useSearchAndFilterProps => {
+	const [searchInput, setSearchInput] = useState<string>('');
+	const [checkboxInput, setCheckboxInput] = useState<boolean>(false);
+	const [selectedCompany, setSelectedCompany] = useState<string>('');
 
 	const sortedData = data.sort((a, b) => {
 		return a.companyName
@@ -15,13 +16,13 @@ const useSearchAndFilter = (data) => {
 		...new Set(sortedData.map((obj) => obj.companyName)),
 	];
 
-	const filterOnButtonClick = (e) => {
-		if (selectedCompany === e.target.id) {
+	const filterOnButtonClick = (e: React.MouseEvent<HTMLButtonElement>) => {
+		if (selectedCompany === e.currentTarget.id) {
 			setSelectedCompany('');
 		} else {
-			setSelectedCompany(e.target.id);
+			setSelectedCompany(e.currentTarget.id);
 		}
-	}
+	};
 
 	const companyButtons = nonDuplicateNames.map((name) => (
 		<button
@@ -42,9 +43,13 @@ const useSearchAndFilter = (data) => {
 	const filteredSearchData = sortedData.filter((item) => {
 		const searchInputLower = searchInput.toLowerCase();
 
-		const searchMatches = ['companyName', 'baconStyle'].some((prop) =>
-			item[prop].toLowerCase().includes(searchInputLower)
-		);
+		const searchMatches = ['companyName', 'baconStyle'].some((prop) => {
+			const propValue = item[prop as keyof AppProps];
+			if (typeof propValue === 'string') {
+				return propValue.toLowerCase().includes(searchInputLower);
+			}
+			return false;
+		});
 
 		const checkboxMatches = !checkboxInput || item.resealable === '✅';
 
@@ -57,7 +62,7 @@ const useSearchAndFilter = (data) => {
 		}
 	});
 
-	return [
+	return {
 		searchInput,
 		setSearchInput,
 		checkboxInput,
@@ -65,7 +70,7 @@ const useSearchAndFilter = (data) => {
 		selectedCompany,
 		companyButtons,
 		filteredSearchData,
-	];
+	};
 };
 
 export default useSearchAndFilter;

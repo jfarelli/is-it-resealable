@@ -1,4 +1,7 @@
-const SidebarNav = ({
+import React from 'react';
+import { SidebarNavProps } from '../model';
+
+const SidebarNav: React.FC<SidebarNavProps> = ({
 	searchInput,
 	checkboxInput,
 	setCheckboxInput,
@@ -23,7 +26,7 @@ const SidebarNav = ({
 					type="checkbox"
 					id="onlyResealableBaconAllowed"
 					data-testid="checkboxInput"
-					value={checkboxInput}
+					value={checkboxInput.toString()}
 					onChange={(e) => setCheckboxInput(e.target.checked)}
 					className="form-checkbox w-5 h-5 mb-6 hover:cursor-pointer"
 				/>

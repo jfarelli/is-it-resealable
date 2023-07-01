@@ -5,12 +5,12 @@ import BOO from '../sounds/boo.mp3';
 import CHEER from '../sounds/cheer.mp3';
 
 interface SingleBaconProps {
-	id: string;
+	id: number | string;
 	companyName: string;
 	baconStyle: string;
 	resealable: string;
 	image: string;
-	displayBaconDetails: (id: string) => void;
+	displayBaconDetails: (id: number | string) => void;
 }
 
 const SingleBacon: React.FC<SingleBaconProps> = ({
@@ -24,9 +24,9 @@ const SingleBacon: React.FC<SingleBaconProps> = ({
 	const [boo] = useSound(BOO, { volume: 0.05 });
 	const [cheer] = useSound(CHEER, { volume: 0.05 });
 
-	const handleSelectedBacon = (e) => {
+	const handleSelectedBacon = (e: React.MouseEvent<HTMLButtonElement>) => {
 		resealable === '❌' ? boo() : cheer();
-		displayBaconDetails(e.target.id);
+		displayBaconDetails(e.currentTarget.id);
 	};
 
 	return (
@@ -46,7 +46,7 @@ const SingleBacon: React.FC<SingleBaconProps> = ({
 			<p className="font-bold">IS IT RESEALABLE? {resealable}</p>
 			<Link to="/bacon-bits">
 				<button
-					id={id}
+					id={id.toString()}
 					onClick={handleSelectedBacon}
 					className="w-auto h-[2.5em] text-md flex items-center justify-center mb-2 p-4"
 				>

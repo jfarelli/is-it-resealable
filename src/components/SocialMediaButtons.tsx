@@ -1,14 +1,17 @@
 import React from 'react';
+import { SocialMediaButtonsProps } from '../model';
 
-const SocialMediaButtons = ({ selectedBacon }) => {
+const SocialMediaButtons: React.FC<SocialMediaButtonsProps> = ({
+	selectedBacon,
+}) => {
 	return (
 		<div
 			data-testid="social-media-buttons"
 			className="flex justify-center gap-8"
 		>
-			{selectedBacon.companyContacts.website ? (
+			{selectedBacon?.companyContacts.website ? (
 				<a
-					href={selectedBacon.companyContacts.website}
+					href={selectedBacon?.companyContacts.website}
 					target="_blank"
 					rel="noopener noreferrer"
 				>
@@ -17,9 +20,9 @@ const SocialMediaButtons = ({ selectedBacon }) => {
 			) : (
 				''
 			)}
-			{selectedBacon.companyContacts.facebook ? (
+			{selectedBacon?.companyContacts.facebook ? (
 				<a
-					href={selectedBacon.companyContacts.facebook}
+					href={selectedBacon?.companyContacts.facebook}
 					target="_blank"
 					rel="noopener noreferrer"
 				>
@@ -28,9 +31,9 @@ const SocialMediaButtons = ({ selectedBacon }) => {
 			) : (
 				''
 			)}
-			{selectedBacon.companyContacts.twitter ? (
+			{selectedBacon?.companyContacts.twitter ? (
 				<a
-					href={selectedBacon.companyContacts.twitter}
+					href={selectedBacon?.companyContacts.twitter}
 					target="_blank"
 					rel="noopener noreferrer"
 				>
@@ -39,9 +42,9 @@ const SocialMediaButtons = ({ selectedBacon }) => {
 			) : (
 				''
 			)}
-			{selectedBacon.companyContacts.instagram ? (
+			{selectedBacon?.companyContacts.instagram ? (
 				<a
-					href={selectedBacon.companyContacts.instagram}
+					href={selectedBacon?.companyContacts.instagram}
 					target="_blank"
 					rel="noopener noreferrer"
 				>
