@@ -39,7 +39,7 @@ export interface ResealableConditionalsProps extends BaconBitsProps {}
 
 // SideBarNav
 export interface SidebarNavProps {
-    checkboxInput: boolean;
+	checkboxInput: boolean;
 	companyButtons: ReactNode;
 	searchInput: string;
 	setCheckboxInput: (value: boolean) => void;
@@ -62,4 +62,20 @@ export interface SocialMediaButtonsProps extends BaconBitsProps {}
 // useSearchAndFilter.tsx
 export interface useSearchAndFilterProps extends SidebarNavProps {
 	filteredSearchData: AppProps[];
+}
+
+export interface SelectedBaconProps {
+	id: number;
+	companyName: string;
+	companyContacts: {
+		website?: string;
+		facebook?: string;
+		twitter?: string;
+		instagram?: string;
+		phone?: string;
+	};
+	baconStyle: string;
+	resealable: string;
+	image: string;
+	displayBaconDetails: jest.Mock;
 }

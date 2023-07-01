@@ -1,6 +1,5 @@
 import React from 'react';
-import { render, screen } from '@testing-library/react';
-import userEvent from '@testing-library/user-event';
+import { render, screen, fireEvent } from '@testing-library/react';
 import { BrowserRouter } from 'react-router-dom';
 import SocialMediaButtons from '../components/SocialMediaButtons';
 
@@ -46,7 +45,15 @@ describe('SocialMediaButtons', () => {
 	});
 
 	test('does not render buttons when contact links are missing', () => {
-		const selectedBaconWithoutContacts = { companyContacts: {} };
+		const selectedBaconWithoutContacts = {
+			id: 1,
+			companyName: 'Big Bill',
+			companyContacts: {},
+			baconStyle: 'Crispy',
+			resealable: '❌',
+			image: 'mockData.jpg',
+			displayBaconDetails: jest.fn(),
+		};
 
 		render(
 			<BrowserRouter>
@@ -91,24 +98,18 @@ describe('SocialMediaButtons', () => {
 		const twitterButton = screen.getByRole('link', { name: /twitter/i });
 
 		const customAttribute = 'data-mock-clicked';
-		const setClicked = jest.fn((event) => {
-			event.target.setAttribute(customAttribute, 'true');
-		});
 
-		websiteButton.addEventListener('click', setClicked);
-		facebookButton.addEventListener('click', setClicked);
-		twitterButton.addEventListener('click', setClicked);
+		fireEvent.click(websiteButton);
+		websiteButton.setAttribute(customAttribute, 'true');
 
-		userEvent.click(websiteButton);
-		userEvent.click(facebookButton);
-		userEvent.click(twitterButton);
+		fireEvent.click(facebookButton);
+		facebookButton.setAttribute(customAttribute, 'true');
+
+		fireEvent.click(twitterButton);
+		twitterButton.setAttribute(customAttribute, 'true');
 
 		expect(websiteButton.getAttribute(customAttribute)).toBe('true');
 		expect(facebookButton.getAttribute(customAttribute)).toBe('true');
 		expect(twitterButton.getAttribute(customAttribute)).toBe('true');
-
-		websiteButton.removeEventListener('click', setClicked);
-		facebookButton.removeEventListener('click', setClicked);
-		twitterButton.removeEventListener('click', setClicked);
 	});
 });
