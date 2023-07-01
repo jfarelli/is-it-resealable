@@ -1,12 +1,14 @@
-import { screen, render, fireEvent } from '@testing-library/react';
+import React from 'react';
+import { screen, render, fireEvent, waitFor } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import BaconHolder from '../components/BaconHolder';
 import Header from '../components/Header';
 import { BrowserRouter } from 'react-router-dom';
+import { AppProps } from '../model';
 
 describe('BaconHolder', () => {
 	const displayBaconDetails = jest.fn();
-	const mockData = [
+	const mockData: AppProps[] = [
 		{
 			id: 1,
 			companyName: 'Good Bacon Company A',
@@ -30,37 +32,37 @@ describe('BaconHolder', () => {
 		},
 	];
 
+	const BaconHolderComponent = (
+		<>
+			<Header scrolled={false} />
+			<BaconHolder data={mockData} displayBaconDetails={displayBaconDetails} />
+		</>
+	);
+
 	test('renders the BaconHolder component', () => {
-		render(
-			<>
-				<Header />
-				<BaconHolder
-					data={mockData}
-					displayBaconDetails={displayBaconDetails}
-				/>
-			</>,
-			{ wrapper: BrowserRouter }
-		);
+		render(BaconHolderComponent, { wrapper: BrowserRouter });
+	});
+
+	test('renders the checkbox and checkbox text', () => {
+		render(BaconHolderComponent, { wrapper: BrowserRouter });
 
 		const sideBarTextElement = screen.getByText(/show only resealable bacon/i);
 		expect(sideBarTextElement).toBeInTheDocument();
 	});
 
+	test('renders individual SingleBacon components', () => {
+		render(BaconHolderComponent, { wrapper: BrowserRouter });
+
+		const singleBaconComponents = screen.getAllByTestId('singleBacon');
+		expect(singleBaconComponents).toHaveLength(mockData.length);
+	});
+
 	test('filters data based on search input', () => {
-		render(
-			<>
-				<Header />
-				<BaconHolder
-					data={mockData}
-					displayBaconDetails={displayBaconDetails}
-				/>
-			</>,
-			{ wrapper: BrowserRouter }
-		);
+		render(BaconHolderComponent, { wrapper: BrowserRouter });
 
 		const searchInput = screen.getByPlaceholderText(
 			/search brand, or style/i
-		);
+		) as HTMLInputElement;
 
 		fireEvent.change(searchInput, { target: { value: 'Style 1' } });
 		expect(searchInput.value).toBe('Style 1');
@@ -78,18 +80,11 @@ describe('BaconHolder', () => {
 	});
 
 	test('filters data based on checkbox input', () => {
-		render(
-			<>
-				<Header />
-				<BaconHolder
-					data={mockData}
-					displayBaconDetails={displayBaconDetails}
-				/>
-			</>,
-			{ wrapper: BrowserRouter }
-		);
+		render(BaconHolderComponent, { wrapper: BrowserRouter });
 
-		const checkboxInput = screen.getByTestId(/checkboxInput/i);
+		const checkboxInput = screen.getByTestId(
+			/checkboxInput/i
+		) as HTMLInputElement;
 		fireEvent.click(checkboxInput);
 		expect(checkboxInput.checked).toBe(true);
 		expect(checkboxInput.checked).not.toBe(false);
@@ -100,16 +95,7 @@ describe('BaconHolder', () => {
 	});
 
 	test('filters data based on company button click', () => {
-		render(
-			<>
-				<Header />
-				<BaconHolder
-					data={mockData}
-					displayBaconDetails={displayBaconDetails}
-				/>
-			</>,
-			{ wrapper: BrowserRouter }
-		);
+		render(BaconHolderComponent, { wrapper: BrowserRouter });
 
 		const companyButton = screen.getAllByTestId(/companyButton/i);
 		expect(companyButton).toHaveLength(3);

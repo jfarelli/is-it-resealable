@@ -3,7 +3,7 @@ import { ReactNode } from 'react';
 // App.tsx
 export interface AppProps {
 	baconStyle: string;
-	companyContacts: {
+	companyContacts?: {
 		facebook?: string;
 		phone?: string;
 		twitter?: string;
@@ -15,7 +15,7 @@ export interface AppProps {
 	id: number | string;
 	image: string;
 	resealable: string;
-    displayBaconDetails?: (id: number | string) => void;
+	displayBaconDetails?: (id: number | string) => void;
 }
 
 // BaconBits.tsx
@@ -62,24 +62,4 @@ export interface SocialMediaButtonsProps extends BaconBitsProps {}
 // useSearchAndFilter.tsx
 export interface useSearchAndFilterProps extends SidebarNavProps {
 	filteredSearchData: AppProps[];
-}
-
-
-// TESTING INTERFACES
-// BaconBits.test.tsx
-export interface AppTestProps {
-	baconStyle: string;
-	companyContacts: {
-		facebook?: string;
-		phone?: string;
-		twitter?: string;
-		website?: string;
-		instagram?: string;
-		linkedIn?: string;
-	};
-	companyName: string;
-	id: number | string;
-	image: string;
-	resealable: string;
-    displayBaconDetails?: (id: number | string) => void;
 }

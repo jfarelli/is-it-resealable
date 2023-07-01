@@ -2,10 +2,10 @@ import React from 'react';
 import { render, screen, fireEvent } from '@testing-library/react';
 import { BrowserRouter } from 'react-router-dom';
 import BaconBits from '../components/BaconBits';
-import { AppTestProps } from '../model';
+import { AppProps } from '../model';
 
 describe('BaconBits', () => {
-	const mockData: AppTestProps = {
+	const mockData: AppProps = {
 		id: 1,
 		companyName: 'Big Bill',
 		companyContacts: {
@@ -17,7 +17,7 @@ describe('BaconBits', () => {
 		baconStyle: 'Crispy',
 		resealable: '❌',
 		image: 'mockData.jpg',
-		displayBaconDetails: jest.fn(),
+        displayBaconDetails: jest.fn(),
 	};
 
 	const BaconBitsComponent = (
