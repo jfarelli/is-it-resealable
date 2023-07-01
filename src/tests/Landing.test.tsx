@@ -85,42 +85,47 @@ describe('Landing', () => {
 		render(<Landing />, { wrapper: BrowserRouter });
 
 		expect(screen.getByText(/the bacon lovers website/i)).toHaveStyle(
-			'display: block',
-			'flex-direction: column',
-			'text-align: center',
-			'height: 100vh',
-			'align-items: center',
-			'justify-content: center',
-			'row-gap: 2rem',
-			'--tw-bg-opacity: 1',
-			'background-color: rgb(253 242 227 / var(--tw-bg-opacity))',
-			'--tw-text-opacity: 1',
-			'color: rgb(155 68 40 / var(--tw-text-opacity))',
-			'font-weight: 700',
-			'font-size: 1.5em',
-			'line-height: 2rem'
+			'display: block'
 		);
 
-		expect(screen.getByText(/is it resealable/i)).toHaveStyle(
-			'font-size: 2em',
-			'font-weight: 700',
-			'padding-top: 0.5rem',
-			'padding-bottom: 0.5rem',
-			'transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter',
-			'transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1)',
-			'transition-duration: 150ms'
-		);
+		expect(screen.getByText(/is it resealable/i)).toHaveStyle('font-size: 2em');
 
 		expect(screen.getByText(/after clicking the button/i)).toHaveStyle(
-			'font-size: 1.17em',
-			'font-weight: 700'
+			'font-size: 1.17em'
 		);
 
 		expect(screen.getByText(/get answers/i)).toHaveStyle(
-			'padding: 2px 6px 3px 6px',
-			'transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter',
-			'transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1)',
-			'transition-duration: 150ms'
+			'padding: 2px 6px 3px 6px'
 		);
+	});
+
+	test('should fail to render a non-existent text element', () => {
+		render(<Landing />, { wrapper: BrowserRouter });
+
+		expect(() => screen.getByText(/non-existent element/i)).toThrowError();
+	});
+
+	test('should fail to find a non-existent data-testid element', () => {
+		render(<Landing />, { wrapper: BrowserRouter });
+
+		expect(() => screen.getByTestId('non-existent-element')).toThrowError();
+	});
+
+	test('should fail to apply incorrect styles to the elements', () => {
+		render(<Landing />, { wrapper: BrowserRouter });
+
+		expect(screen.getByText(/the bacon lovers website/i)).not.toHaveStyle(
+			'display: flex'
+		);
+
+		expect(screen.getByText(/is it resealable/i)).not.toHaveStyle(
+			'font-size: 1em'
+		);
+
+		expect(
+			screen.getByText(/after clicking the button below/i)
+		).not.toHaveStyle('font-size: 1em');
+
+		expect(screen.getByText(/get answers/i)).not.toHaveStyle('padding: 4px');
 	});
 });
