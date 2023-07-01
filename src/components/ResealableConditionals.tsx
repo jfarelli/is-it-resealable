@@ -42,9 +42,7 @@ const ResealableConditionals: React.FC<ResealableConditionalsProps> = ({
 			{selectedBacon?.companyContacts.phone &&
 			selectedBacon?.resealable === '❌' ? (
 				<>
-					<p className="mt-4 font-bold text-xl">
-						You can even Call 'em! <br></br>{' '}
-					</p>
+					<p className="mt-4 font-bold text-xl">You can even Call 'em!</p>
 					<p className="text-xl">{selectedBacon?.companyContacts.phone}</p>
 				</>
 			) : (

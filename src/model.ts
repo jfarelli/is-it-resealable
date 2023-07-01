@@ -15,6 +15,7 @@ export interface AppProps {
 	id: number | string;
 	image: string;
 	resealable: string;
+    displayBaconDetails?: (id: number | string) => void;
 }
 
 // BaconBits.tsx
@@ -61,4 +62,24 @@ export interface SocialMediaButtonsProps extends BaconBitsProps {}
 // useSearchAndFilter.tsx
 export interface useSearchAndFilterProps extends SidebarNavProps {
 	filteredSearchData: AppProps[];
+}
+
+
+// TESTING INTERFACES
+// BaconBits.test.tsx
+export interface AppTestProps {
+	baconStyle: string;
+	companyContacts: {
+		facebook?: string;
+		phone?: string;
+		twitter?: string;
+		website?: string;
+		instagram?: string;
+		linkedIn?: string;
+	};
+	companyName: string;
+	id: number | string;
+	image: string;
+	resealable: string;
+    displayBaconDetails?: (id: number | string) => void;
 }
