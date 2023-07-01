@@ -3,15 +3,7 @@ import { Link } from 'react-router-dom';
 import useSound from 'use-sound';
 import BOO from '../sounds/boo.mp3';
 import CHEER from '../sounds/cheer.mp3';
-
-interface SingleBaconProps {
-	id: number | string;
-	companyName: string;
-	baconStyle: string;
-	resealable: string;
-	image: string;
-	displayBaconDetails: (id: number | string) => void;
-}
+import { SingleBaconProps } from '../model';
 
 const SingleBacon: React.FC<SingleBaconProps> = ({
 	id,

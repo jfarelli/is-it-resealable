@@ -39,9 +39,9 @@ export interface ResealableConditionalsProps extends BaconBitsProps {}
 
 // SideBarNav
 export interface SidebarNavProps {
-	searchInput: string;
-	checkboxInput: boolean;
+    checkboxInput: boolean;
 	companyButtons: ReactNode;
+	searchInput: string;
 	setCheckboxInput: (value: boolean) => void;
 	setSearchInput: (value: string) => void;
 }
