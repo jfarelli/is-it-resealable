@@ -1,19 +1,4 @@
 "use strict";
-// interface AppProps {
-// 	id: number;
-// 	companyName: string;
-// 	companyContacts: {
-// 		facebook?: string;
-// 		phone?: string;
-// 		twitter?: string;
-// 		website?: string;
-// 		instagram?: string;
-// 		linkedIn?: string;
-// 	};
-// 	baconStyle: string;
-// 	resealable: string;
-// 	image: string;
-// }
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
     return new (P || (P = Promise))(function (resolve, reject) {
@@ -26,8 +11,8 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 Object.defineProperty(exports, "__esModule", { value: true });
 const fetchBaconData = () => __awaiter(void 0, void 0, void 0, function* () {
     try {
-        const response = yield fetch('http://localhost:8000/');
-        // const response = await fetch('https://is-it-resealable-be.vercel.app/');
+        // const response = await fetch('http://localhost:8000/');
+        const response = yield fetch('https://is-it-resealable-be.vercel.app/');
         if (!response.ok) {
             throw new Error('Something went wrong. Please try again!');
         }

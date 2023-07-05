@@ -33,10 +33,10 @@ const Landing_1 = __importDefault(require("./components/Landing"));
 const Header_1 = __importDefault(require("./components/Header"));
 const BaconHolder_1 = __importDefault(require("./components/BaconHolder"));
 const BaconBits_1 = __importDefault(require("./components/BaconBits"));
-function App() {
+const App = () => {
     const [loading, setLoading] = (0, react_1.useState)(false);
     const [data, setData] = (0, react_1.useState)([]);
-    const [selectedBacon, setSelectedBacon] = (0, react_1.useState)();
+    const [selectedBacon, setSelectedBacon] = (0, react_1.useState)(); // LEFT OFF HERE!!!!!! CONSOLE.LOG IN BACONBITS TO SEE WHAT'S BROUGHT IN!!
     const [scrolled, setScrolled] = (0, react_1.useState)(false);
     (0, react_1.useEffect)(() => {
         setLoading(true);
@@ -62,7 +62,10 @@ function App() {
     }, []);
     const displayBaconDetails = (id) => {
         if (data) {
-            const foundBacon = data.find((bacon) => bacon.id === Number(id));
+            const foundBacon = data.find((bacon) => {
+                let stringBacon = bacon.id.toString();
+                return stringBacon === id;
+            });
             setSelectedBacon(foundBacon);
         }
     };
@@ -74,7 +77,6 @@ function App() {
                     react_1.default.createElement(BaconHolder_1.default, { data: data, displayBaconDetails: displayBaconDetails }))) }),
             react_1.default.createElement(react_router_dom_1.Route, { path: "bacon-bits", element: loading ? (react_1.default.createElement("h1", null, "Loading...")) : (react_1.default.createElement(react_1.default.Fragment, null,
                     react_1.default.createElement(Header_1.default, { scrolled: scrolled }),
-                    selectedBacon && react_1.default.createElement(BaconBits_1.default, { selectedBacon: selectedBacon }))) }))));
-}
-;
+                    react_1.default.createElement(BaconBits_1.default, { selectedBacon: selectedBacon }))) }))));
+};
 exports.default = App;

@@ -12,9 +12,9 @@ const BaconBits = ({ selectedBacon }) => {
             react_1.default.createElement("button", { className: "text-xl mt-[5%] w-40" }, "Back to Search")),
         react_1.default.createElement("div", { className: "flex flex-col" },
             react_1.default.createElement("div", { className: "flex flex-col flex-wrap items-center w-screen justify-center" },
-                selectedBacon.resealable === '❌' ? (react_1.default.createElement("h1", { className: "text-8xl mt-5 text-red-600 font-bold" }, "NOPE!")) : (react_1.default.createElement("h1", { className: "text-8xl mt-8 text-green-600 font-bold" }, "YUUUUUP!")),
+                (selectedBacon === null || selectedBacon === void 0 ? void 0 : selectedBacon.resealable) === '❌' ? (react_1.default.createElement("h1", { className: "text-8xl mt-5 text-red-600 font-bold" }, "NOPE!")) : (react_1.default.createElement("h1", { className: "text-8xl mt-8 text-green-600 font-bold" }, "YUUUUUP!")),
                 react_1.default.createElement("div", { className: "w-[25%] h-40 aspect-w-1 aspect-h-1 mt-[1%]" },
-                    react_1.default.createElement("img", { src: `http://localhost:8000/images/${selectedBacon.image}`, alt: `${selectedBacon.companyName} ${selectedBacon.baconStyle}`, className: "w-full h-auto object-fill" }))),
+                    react_1.default.createElement("img", { src: `http://localhost:8000/images/${selectedBacon === null || selectedBacon === void 0 ? void 0 : selectedBacon.image}`, alt: `${selectedBacon === null || selectedBacon === void 0 ? void 0 : selectedBacon.companyName} ${selectedBacon === null || selectedBacon === void 0 ? void 0 : selectedBacon.baconStyle}`, className: "w-full h-auto object-fill shadow-sm shadow-gray-600" }))),
             react_1.default.createElement(ResealableConditionals_1.default, { selectedBacon: selectedBacon }))));
 };
 exports.default = BaconBits;

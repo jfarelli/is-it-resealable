@@ -4,16 +4,16 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const react_1 = __importDefault(require("react"));
-const SocialMediaButtons = ({ selectedBacon }) => {
-    console.log('SELECTED BACON: ', selectedBacon);
+const SocialMediaButtons = ({ selectedBacon, }) => {
+    var _a, _b, _c, _d;
     return (react_1.default.createElement("div", { "data-testid": "social-media-buttons", className: "flex justify-center gap-8" },
-        selectedBacon.companyContacts.website ? (react_1.default.createElement("a", { href: selectedBacon.companyContacts.website, target: "_blank", rel: "noopener noreferrer" },
+        ((_a = selectedBacon === null || selectedBacon === void 0 ? void 0 : selectedBacon.companyContacts) === null || _a === void 0 ? void 0 : _a.website) ? (react_1.default.createElement("a", { href: selectedBacon === null || selectedBacon === void 0 ? void 0 : selectedBacon.companyContacts.website, target: "_blank", rel: "noopener noreferrer" },
             react_1.default.createElement("button", { className: "p-2 text-xl w-[125%]" }, "Website"))) : (''),
-        selectedBacon.companyContacts.facebook ? (react_1.default.createElement("a", { href: selectedBacon.companyContacts.facebook, target: "_blank", rel: "noopener noreferrer" },
+        ((_b = selectedBacon === null || selectedBacon === void 0 ? void 0 : selectedBacon.companyContacts) === null || _b === void 0 ? void 0 : _b.facebook) ? (react_1.default.createElement("a", { href: selectedBacon === null || selectedBacon === void 0 ? void 0 : selectedBacon.companyContacts.facebook, target: "_blank", rel: "noopener noreferrer" },
             react_1.default.createElement("button", { className: "p-2 text-xl w-[125%]" }, "Facebook"))) : (''),
-        selectedBacon.companyContacts.twitter ? (react_1.default.createElement("a", { href: selectedBacon.companyContacts.twitter, target: "_blank", rel: "noopener noreferrer" },
+        ((_c = selectedBacon === null || selectedBacon === void 0 ? void 0 : selectedBacon.companyContacts) === null || _c === void 0 ? void 0 : _c.twitter) ? (react_1.default.createElement("a", { href: selectedBacon === null || selectedBacon === void 0 ? void 0 : selectedBacon.companyContacts.twitter, target: "_blank", rel: "noopener noreferrer" },
             react_1.default.createElement("button", { className: "p-2 text-xl w-[125%]" }, "Twitter"))) : (''),
-        selectedBacon.companyContacts.instagram ? (react_1.default.createElement("a", { href: selectedBacon.companyContacts.instagram, target: "_blank", rel: "noopener noreferrer" },
+        ((_d = selectedBacon === null || selectedBacon === void 0 ? void 0 : selectedBacon.companyContacts) === null || _d === void 0 ? void 0 : _d.instagram) ? (react_1.default.createElement("a", { href: selectedBacon === null || selectedBacon === void 0 ? void 0 : selectedBacon.companyContacts.instagram, target: "_blank", rel: "noopener noreferrer" },
             react_1.default.createElement("button", { className: "p-2 text-xl w-[125%]" }, "Instagram"))) : ('')));
 };
 exports.default = SocialMediaButtons;

@@ -24,15 +24,11 @@ var __importStar = (this && this.__importStar) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const react_1 = __importStar(require("react"));
-// type BaconSearchProps = {
-// 	// ... other props
-// };
 const useSearchAndFilter = (data) => {
     const [searchInput, setSearchInput] = (0, react_1.useState)('');
     const [checkboxInput, setCheckboxInput] = (0, react_1.useState)(false);
     const [selectedCompany, setSelectedCompany] = (0, react_1.useState)('');
     const sortedData = data.sort((a, b) => {
-        // console.log('A: ', a, ' B: ', b);
         return a.companyName
             .toUpperCase()
             .localeCompare(b.companyName.toUpperCase());
@@ -41,23 +37,25 @@ const useSearchAndFilter = (data) => {
         ...new Set(sortedData.map((obj) => obj.companyName)),
     ];
     const filterOnButtonClick = (e) => {
-        const target = e.target;
-        if (selectedCompany === target.id) {
+        if (selectedCompany === e.currentTarget.id) {
             setSelectedCompany('');
         }
         else {
-            setSelectedCompany(target.id);
+            setSelectedCompany(e.currentTarget.id);
         }
     };
-    console.log('SELECTED Company: ', selectedCompany);
     const companyButtons = nonDuplicateNames.map((name) => (react_1.default.createElement("button", { key: name, id: name, "data-testid": "companyButton", onClick: filterOnButtonClick, className: `h-[2em] text-lg p-4 flex items-center justify-center ${selectedCompany === name
             ? 'bg-[#F9BB38] text-[#9B4428]'
             : 'bg-[#9B4428]'}` }, name)));
     const filteredSearchData = sortedData.filter((item) => {
         const searchInputLower = searchInput.toLowerCase();
-        const searchMatches = ['companyName', 'baconStyle'].some((prop) => item[prop]
-            .toLowerCase()
-            .includes(searchInputLower));
+        const searchMatches = ['companyName', 'baconStyle'].some((prop) => {
+            const propValue = item[prop];
+            if (typeof propValue === 'string') {
+                return propValue.toLowerCase().includes(searchInputLower);
+            }
+            return false;
+        });
         const checkboxMatches = !checkboxInput || item.resealable === '✅';
         if (selectedCompany) {
             return (item.companyName === selectedCompany && searchMatches && checkboxMatches);
@@ -66,14 +64,13 @@ const useSearchAndFilter = (data) => {
             return searchMatches && checkboxMatches;
         }
     });
-    return [
+    return {
         searchInput,
         setSearchInput,
         checkboxInput,
         setCheckboxInput,
-        selectedCompany,
         companyButtons,
         filteredSearchData,
-    ];
+    };
 };
 exports.default = useSearchAndFilter;
