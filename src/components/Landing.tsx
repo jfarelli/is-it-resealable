@@ -46,12 +46,12 @@ const Landing: React.FC = () => {
 				<div
 					data-testid="resealableTextBackground"
 					id="resealableTextBackground"
-					className="flex justify-center font-bold prose-2xl w-fill bg-[#F9BB38] transition duration-270 ease-in-out"
+					className="container flex justify-center font-bold prose-xl bg-[#F9BB38] transition duration-270 ease-in-out"
 				>
 					<h1
 						data-testid="resealableText"
 						id="resealableText"
-						className="bg-[#F9BB38] prose-lg transition duration-270 ease-in-out pt-2"
+						className="bg-[#F9BB38] transition duration-270 ease-in-out pt-2"
 					>
 						IS YOUR BACON RESEALABLE???
 					</h1>

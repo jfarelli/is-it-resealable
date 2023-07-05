@@ -8,11 +8,9 @@ const ResealableConditionals: React.FC<ResealableConditionalsProps> = ({
 	return (
 		<div
 			data-testid="resealable-conditionals"
-			className=""
-            // ^^^ removed flex flex-col items-center mt-[10%]
+			className="flex flex-col items-center text-center"
 		>
 			<h4 className="font-bold text-2xl">
-                {/* ^^^ removed mb-1  */}
 				{selectedBacon?.resealable === '❌' ? (
 					<p>
 						{selectedBacon?.companyName} does{' '}

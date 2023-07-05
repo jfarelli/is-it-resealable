@@ -23,16 +23,13 @@ const SingleBacon: React.FC<SingleBaconProps> = ({
 
 	return (
 		<div
-			className="text-center shadow-sm shadow-gray-900 transition duration-270 ease-in-out rounded-2xl hover:shadow-md hover:shadow-gray-900"
-            // ^^^ removed flex flex-col items-center h-[23em] 
+			className="grid text-center shadow-sm shadow-gray-900 rounded-2xl"
 			data-testid="singleBacon"
 		>
 			<img
-				// src={`http://localhost:8000/images/${image}`}
 				src={`https://is-it-resealable-be.vercel.app/images/${image}`}
 				alt={`${companyName} ${baconStyle} Bacon`}
-				className="object-contain rounded-tl-2xl rounded-tr-2xl"
-                // ^^^ removed h-60 
+				className="object-contain h-52 w-full"
 			/>
 			<h3 data-testid="company-name" className="font-bold text-lg">
 				{companyName}
@@ -43,8 +40,7 @@ const SingleBacon: React.FC<SingleBaconProps> = ({
 				<button
 					id={id.toString()}
 					onClick={handleSelectedBacon}
-					className="text-md"
-                    // ^^^ removed w-auto h-[2.5em] flex items-center justify-center mb-2 p-4
+					className="text-md w-[75%] mb-2"
 				>
 					{companyName}'s Details
 				</button>

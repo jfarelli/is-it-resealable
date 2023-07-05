@@ -1,5 +1,7 @@
 import React from 'react';
 import { SocialMediaButtonsProps } from '../model';
+import { FaInstagram, FaTwitter, FaFacebook } from 'react-icons/fa';
+import { CgWebsite } from 'react-icons/cg';
 
 const SocialMediaButtons: React.FC<SocialMediaButtonsProps> = ({
 	selectedBacon,
@@ -7,8 +9,7 @@ const SocialMediaButtons: React.FC<SocialMediaButtonsProps> = ({
 	return (
 		<div
 			data-testid="social-media-buttons"
-			className=""
-            // ^^^ removed flex justify-center gap-8
+			className="flex justify-center gap-2"
 		>
 			{selectedBacon?.companyContacts?.website ? (
 				<a
@@ -16,20 +17,7 @@ const SocialMediaButtons: React.FC<SocialMediaButtonsProps> = ({
 					target="_blank"
 					rel="noopener noreferrer"
 				>
-					<button className="text-xl">Website</button>
-                    {/* ^^^ removed p-2 w-[125%] */}
-				</a>
-			) : (
-				''
-			)}
-			{selectedBacon?.companyContacts?.facebook ? (
-				<a
-					href={selectedBacon?.companyContacts.facebook}
-					target="_blank"
-					rel="noopener noreferrer"
-				>
-					<button className="text-xl">Facebook</button>
-                    {/* ^^^ removed p-2 w-[125%] */}
+					<CgWebsite className="linked-icon" />
 				</a>
 			) : (
 				''
@@ -40,8 +28,7 @@ const SocialMediaButtons: React.FC<SocialMediaButtonsProps> = ({
 					target="_blank"
 					rel="noopener noreferrer"
 				>
-					<button className="text-xl">Twitter</button>
-                    {/* ^^^ removed p-2 w-[125%] */}
+					<FaTwitter className="linked-icon" />
 				</a>
 			) : (
 				''
@@ -52,8 +39,18 @@ const SocialMediaButtons: React.FC<SocialMediaButtonsProps> = ({
 					target="_blank"
 					rel="noopener noreferrer"
 				>
-					<button className="text-xl">Instagram</button>
-                    {/* ^^^ removed p-2 w-[125%] */}
+					<FaInstagram className="linked-icon" />
+				</a>
+			) : (
+				''
+			)}
+			{selectedBacon?.companyContacts?.facebook ? (
+				<a
+					href={selectedBacon?.companyContacts.facebook}
+					target="_blank"
+					rel="noopener noreferrer"
+				>
+					<FaFacebook className="linked-icon" />
 				</a>
 			) : (
 				''
