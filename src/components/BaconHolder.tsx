@@ -26,7 +26,7 @@ const BaconHolder: React.FC<BaconHolderProps> = ({
 				setSearchInput={setSearchInput}
 				companyButtons={companyButtons}
 			/>
-			<div className="flex flex-wrap justify-center gap-7 mt-4 ml-[15%]">
+			<div className="flex flex-wrap flex-grow justify-center gap-7 mt-4 ml-[15%]">
 				{filteredSearchData.map((item: AppProps) => {
 					return (
 						<SingleBacon
