@@ -10,7 +10,7 @@ const BaconBits: React.FC<BaconBitsProps> = ({ selectedBacon }) => {
 				<button className="text-xl mt-[5%] w-40">Back to Search</button>
 			</Link>
 			<div className="flex flex-col">
-				<div className="flex flex-col flex-wrap items-center w-screen justify-center">
+				<div className="flex flex-col flex-wrap items-center justify-center">
 					{selectedBacon?.resealable === '❌' ? (
 						<h1 className="text-8xl mt-5 text-red-600 font-bold">NOPE!</h1>
 					) : (
@@ -21,7 +21,7 @@ const BaconBits: React.FC<BaconBitsProps> = ({ selectedBacon }) => {
 							// src={`http://localhost:8000/images/${selectedBacon?.image}`}
 							src={`https://is-it-resealable-be.vercel.app/images/${selectedBacon?.image}`}
 							alt={`${selectedBacon?.companyName} ${selectedBacon?.baconStyle}`}
-							className="w-full h-auto object-fill shadow-sm shadow-gray-600"
+							className="h-auto w-screen object-fill shadow-sm shadow-gray-600"
 						/>
 					</div>
 				</div>
