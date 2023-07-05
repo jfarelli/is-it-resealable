@@ -28,7 +28,7 @@ const SingleBacon: React.FC<SingleBaconProps> = ({
 		>
 			<img
 				// src={`http://localhost:8000/images/${image}`}
-				src={`https://is-it-resealable-be.vercel.app/${image}`}
+				src={`https://is-it-resealable-be.vercel.app/images/${image}`}
 				alt={`${companyName} ${baconStyle} Bacon`}
 				className="h-60 object-contain rounded-tl-2xl rounded-tr-2xl"
 			/>

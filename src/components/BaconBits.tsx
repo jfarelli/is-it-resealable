@@ -19,7 +19,7 @@ const BaconBits: React.FC<BaconBitsProps> = ({ selectedBacon }) => {
 					<div className="w-[25%] h-40 aspect-w-1 aspect-h-1 mt-[1%]">
 						<img
 							// src={`http://localhost:8000/images/${selectedBacon?.image}`}
-							src={`https://is-it-resealable-be.vercel.app/${selectedBacon?.image}`}
+							src={`https://is-it-resealable-be.vercel.app/images/${selectedBacon?.image}`}
 							alt={`${selectedBacon?.companyName} ${selectedBacon?.baconStyle}`}
 							className="w-full h-auto object-fill shadow-sm shadow-gray-600"
 						/>
