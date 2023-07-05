@@ -11,7 +11,7 @@ import { AppProps } from './model';
 const App: React.FC = () => {
 	const [loading, setLoading] = useState<boolean>(false);
 	const [data, setData] = useState<AppProps[]>([]);
-	const [selectedBacon, setSelectedBacon] = useState<AppProps>(); // LEFT OFF HERE!!!!!! CONSOLE.LOG IN BACONBITS TO SEE WHAT'S BROUGHT IN!!
+	const [selectedBacon, setSelectedBacon] = useState<AppProps>();
 	const [scrolled, setScrolled] = useState<boolean>(false);
 
 	useEffect(() => {

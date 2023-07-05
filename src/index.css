@@ -7,9 +7,9 @@
 	font-family: 'Aclonica';
 }
 
-body {
+/* body {
 	background-color: #fdf2e3;
-}
+} */
 
 button {
 	background-color: #9b4428;
@@ -26,6 +26,6 @@ button:hover {
 }
 
 img {
-	aspect-ratio: 3/2;
+	/* aspect-ratio: 3/2; */
 	mix-blend-mode: darken;
 }

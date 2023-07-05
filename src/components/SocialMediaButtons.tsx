@@ -7,7 +7,8 @@ const SocialMediaButtons: React.FC<SocialMediaButtonsProps> = ({
 	return (
 		<div
 			data-testid="social-media-buttons"
-			className="flex justify-center gap-8"
+			className=""
+            // ^^^ removed flex justify-center gap-8
 		>
 			{selectedBacon?.companyContacts?.website ? (
 				<a
@@ -15,7 +16,8 @@ const SocialMediaButtons: React.FC<SocialMediaButtonsProps> = ({
 					target="_blank"
 					rel="noopener noreferrer"
 				>
-					<button className="p-2 text-xl w-[125%]">Website</button>
+					<button className="text-xl">Website</button>
+                    {/* ^^^ removed p-2 w-[125%] */}
 				</a>
 			) : (
 				''
@@ -26,7 +28,8 @@ const SocialMediaButtons: React.FC<SocialMediaButtonsProps> = ({
 					target="_blank"
 					rel="noopener noreferrer"
 				>
-					<button className="p-2 text-xl w-[125%]">Facebook</button>
+					<button className="text-xl">Facebook</button>
+                    {/* ^^^ removed p-2 w-[125%] */}
 				</a>
 			) : (
 				''
@@ -37,7 +40,8 @@ const SocialMediaButtons: React.FC<SocialMediaButtonsProps> = ({
 					target="_blank"
 					rel="noopener noreferrer"
 				>
-					<button className="p-2 text-xl w-[125%]">Twitter</button>
+					<button className="text-xl">Twitter</button>
+                    {/* ^^^ removed p-2 w-[125%] */}
 				</a>
 			) : (
 				''
@@ -48,7 +52,8 @@ const SocialMediaButtons: React.FC<SocialMediaButtonsProps> = ({
 					target="_blank"
 					rel="noopener noreferrer"
 				>
-					<button className="p-2 text-xl w-[125%]">Instagram</button>
+					<button className="text-xl">Instagram</button>
+                    {/* ^^^ removed p-2 w-[125%] */}
 				</a>
 			) : (
 				''
