@@ -9,17 +9,17 @@ const SidebarNav: React.FC<SidebarNavProps> = ({
 	companyButtons,
 }) => {
 	return (
-		<div className="flex flex-col items-center bg-[#9B4428] h-screen w-[35%] sm:w-[15%] fixed pt-4">
+		<div className="flex flex-col items-center h-screen bg-[#9B4428] fixed p-4 mt-14 z-10">
 			<input
 				type="text"
 				placeholder="Search Brand, or Style"
 				value={searchInput}
 				aria-label="search-input"
 				onChange={(e) => setSearchInput(e.target.value)}
-				className="w-[85%] overflow-ellipsis text-center rounded-xl border-2 mt-2 bg-white hover:cursor-text"
+				className="overflow-ellipsis text-center rounded-xl border-2 bg-white hover:cursor-text mt-2"
 			/>
 			<div className="flex flex-col items-center">
-				<label className="flex flex-col font-bold text-center text-md mt-2 text-[#F9BB38] italic">
+				<label className="flex flex-col mt-2 font-bold text-center prose-lg text-[#F9BB38] italic">
 					Show Only Resealable Bacon
 				</label>
 				<input
@@ -28,10 +28,10 @@ const SidebarNav: React.FC<SidebarNavProps> = ({
 					data-testid="checkboxInput"
 					value={checkboxInput.toString()}
 					onChange={(e) => setCheckboxInput(e.target.checked)}
-					className="form-checkbox w-5 h-5 mb-6 hover:cursor-pointer"
+					className="hover:cursor-pointer w-5 h-5 mb-6"
 				/>
 			</div>
-			<div className="flex flex-col gap-2 mt-[30%]">{companyButtons}</div>
+			<div className="flex flex-col gap-2 mt-4">{companyButtons}</div>
 		</div>
 	);
 };

@@ -9,8 +9,8 @@ const Header: React.FC<HeaderProps> = ({ scrolled }) => {
 	return (
 		<div
 			data-testid="header-element"
-			className={`bg-[#F9BB38] text-[#9B4428] h-16 z-10 flex items-center justify-center drop-shadow-2xl fixed top-0 left-0 right-0 font-bold ${
-				scrolled ? 'shadow-sm shadow-gray-700' : ''
+			className={`flex items-center justify-center z-10 p-2 bg-[#F9BB38] text-[#9B4428] drop-shadow-2xl fixed top-0 left-0 right-0 font-bold ${
+				scrolled ? 'shadow-md shadow-black-300' : ''
 			}`}
 		>
 			<Link to="/">

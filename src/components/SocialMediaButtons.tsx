@@ -1,5 +1,7 @@
 import React from 'react';
 import { SocialMediaButtonsProps } from '../model';
+import { FaInstagram, FaTwitter, FaFacebook } from 'react-icons/fa';
+import { CgWebsite } from 'react-icons/cg';
 
 const SocialMediaButtons: React.FC<SocialMediaButtonsProps> = ({
 	selectedBacon,
@@ -7,7 +9,7 @@ const SocialMediaButtons: React.FC<SocialMediaButtonsProps> = ({
 	return (
 		<div
 			data-testid="social-media-buttons"
-			className="flex justify-center gap-8"
+			className="flex justify-center gap-2"
 		>
 			{selectedBacon?.companyContacts?.website ? (
 				<a
@@ -15,18 +17,7 @@ const SocialMediaButtons: React.FC<SocialMediaButtonsProps> = ({
 					target="_blank"
 					rel="noopener noreferrer"
 				>
-					<button className="p-2 text-xl w-[125%]">Website</button>
-				</a>
-			) : (
-				''
-			)}
-			{selectedBacon?.companyContacts?.facebook ? (
-				<a
-					href={selectedBacon?.companyContacts.facebook}
-					target="_blank"
-					rel="noopener noreferrer"
-				>
-					<button className="p-2 text-xl w-[125%]">Facebook</button>
+					<CgWebsite className="linked-icon" />
 				</a>
 			) : (
 				''
@@ -37,7 +28,7 @@ const SocialMediaButtons: React.FC<SocialMediaButtonsProps> = ({
 					target="_blank"
 					rel="noopener noreferrer"
 				>
-					<button className="p-2 text-xl w-[125%]">Twitter</button>
+					<FaTwitter className="linked-icon" />
 				</a>
 			) : (
 				''
@@ -48,7 +39,18 @@ const SocialMediaButtons: React.FC<SocialMediaButtonsProps> = ({
 					target="_blank"
 					rel="noopener noreferrer"
 				>
-					<button className="p-2 text-xl w-[125%]">Instagram</button>
+					<FaInstagram className="linked-icon" />
+				</a>
+			) : (
+				''
+			)}
+			{selectedBacon?.companyContacts?.facebook ? (
+				<a
+					href={selectedBacon?.companyContacts.facebook}
+					target="_blank"
+					rel="noopener noreferrer"
+				>
+					<FaFacebook className="linked-icon" />
 				</a>
 			) : (
 				''

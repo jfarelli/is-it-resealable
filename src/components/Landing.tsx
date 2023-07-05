@@ -37,41 +37,42 @@ const Landing: React.FC = () => {
 	};
 
 	return (
-		<div className="flex flex-col text-center h-screen items-center justify-center gap-y-8 bg-[#fdf2e3] text-[#9B4428]">
-			<h2 className="font-bold text-2xl sm:text-3xl">
-				The bacon lovers website that dares to ask
-				<br></br>
-				one of the most important packaging questions:
-			</h2>
-			<div
-				data-testid="resealableTextBackground"
-				id="resealableTextBackground"
-				className="font-bold bg-[#F9BB38] py-2 px-6 rounded-tl-3xl rounded-br-3xl transition duration-270 ease-in-out"
-			>
-				<h1
-					data-testid="resealableText"
-					id="resealableText"
-					className="bg-[#F9BB38] pt-1 sm:pt-2 text-3xl sm:text-6xl transition duration-270 ease-in-out"
-				>
-					IS IT RESEALABLE???
+		<div className="flex flex-col justify-center items-center text-center bg-[#fdf2e3] text-[#9B4428] h-screen">
+			<div className="container flex flex-col justify-center gap-y-8">
+				<h1 className="font-bold prose-xl">
+					The bacon lovers website that dares to ask one of the most important
+					packaging questions:
 				</h1>
-			</div>
-			<h3 data-testid="prompt-text" className="font-bold sm:text-xl">
-				After clicking the button below, you’ll be led to a page where you can
-				start getting answers!
-				<br></br>
-				Search and filter by brand, bacon style, or resealability!
-			</h3>
-			<Link to="/bacon-main">
-				<button
-					id="getAnswersButton"
-					className="p-2 sm:p-3 text-1xl sm:text-3xl"
-					onMouseOver={colorChangeOver}
-					onMouseOut={colorChangeOut}
+				<div
+					data-testid="resealableTextBackground"
+					id="resealableTextBackground"
+					className="container flex justify-center font-bold prose-xl bg-[#F9BB38] transition duration-270 ease-in-out"
 				>
-					Get Answers!
-				</button>
-			</Link>
+					<h1
+						data-testid="resealableText"
+						id="resealableText"
+						className="bg-[#F9BB38] transition duration-270 ease-in-out pt-2"
+					>
+						IS YOUR BACON RESEALABLE???
+					</h1>
+				</div>
+				<h3 data-testid="prompt-text" className="font-bold sm:text-xl">
+					After clicking the button below, you’ll be led to a page where you can
+					start getting answers!
+					<br></br>
+					Search and filter by brand, bacon style, or resealability!
+				</h3>
+				<Link to="/bacon-main">
+					<button
+						id="getAnswersButton"
+						className="prose-lg pt-1 px-6"
+						onMouseOver={colorChangeOver}
+						onMouseOut={colorChangeOut}
+					>
+						GET ANSWERS
+					</button>
+				</Link>
+			</div>
 		</div>
 	);
 };
