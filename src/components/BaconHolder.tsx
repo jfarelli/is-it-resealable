@@ -18,7 +18,7 @@ const BaconHolder: React.FC<BaconHolderProps> = ({
 	} = useSearchAndFilter(data);
 
 	return (
-		<div className="grid bg-[#fdf2e3]">
+		<div className="flex bg-[#fdf2e3]">
 			<SidebarNav
 				searchInput={searchInput}
 				checkboxInput={checkboxInput}
@@ -26,18 +26,23 @@ const BaconHolder: React.FC<BaconHolderProps> = ({
 				setSearchInput={setSearchInput}
 				companyButtons={companyButtons}
 			/>
-			<div className="grid grid-cols-4 gap-4 ml-72 mr-8 mt-20 mb-6">
+			<div className="flex flex-wrap justify-center gap-4 ml-72 mt-20 mb-6">
 				{filteredSearchData.map((item: AppProps) => {
 					return (
-						<SingleBacon
-							id={item.id}
+						<div
 							key={item.id}
-							companyName={item.companyName}
-							baconStyle={item.baconStyle}
-							resealable={item.resealable}
-							image={item.image}
-							displayBaconDetails={displayBaconDetails}
-						/>
+							className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/4 mb-4 px-2"
+						>
+							<SingleBacon
+								id={item.id}
+								key={item.id}
+								companyName={item.companyName}
+								baconStyle={item.baconStyle}
+								resealable={item.resealable}
+								image={item.image}
+								displayBaconDetails={displayBaconDetails}
+							/>
+						</div>
 					);
 				})}
 			</div>

@@ -1,6 +1,6 @@
 import React from 'react';
 import { SocialMediaButtonsProps } from '../model';
-import { FaInstagram, FaTwitter, FaFacebook } from 'react-icons/fa';
+import { FaInstagram, FaTwitter, FaFacebook, FaLinkedin, FaLink } from 'react-icons/fa';
 import { CgWebsite } from 'react-icons/cg';
 
 const SocialMediaButtons: React.FC<SocialMediaButtonsProps> = ({
@@ -51,6 +51,17 @@ const SocialMediaButtons: React.FC<SocialMediaButtonsProps> = ({
 					rel="noopener noreferrer"
 				>
 					<FaFacebook className="linked-icon" />
+				</a>
+			) : (
+				''
+			)}
+			{selectedBacon?.companyContacts?.linkedIn ? (
+				<a
+					href={selectedBacon?.companyContacts.linkedIn}
+					target="_blank"
+					rel="noopener noreferrer"
+				>
+					<FaLinkedin className="linked-icon" />
 				</a>
 			) : (
 				''

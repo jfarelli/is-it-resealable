@@ -23,13 +23,13 @@ const SingleBacon: React.FC<SingleBaconProps> = ({
 
 	return (
 		<div
-			className="grid text-center shadow-sm shadow-gray-900 rounded-2xl"
+			className="text-center shadow-sm shadow-gray-900 rounded-2xl bg-white"
 			data-testid="singleBacon"
 		>
 			<img
 				src={`https://is-it-resealable-be.vercel.app/images/${image}`}
 				alt={`${companyName} ${baconStyle} Bacon`}
-				className="object-contain h-52 w-full"
+				className="single-bacon-cards object-contain h-52 w-full"
 			/>
 			<h3 data-testid="company-name" className="font-bold text-lg">
 				{companyName}
