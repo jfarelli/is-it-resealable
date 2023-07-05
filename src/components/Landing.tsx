@@ -65,7 +65,7 @@ const Landing: React.FC = () => {
 				<Link to="/bacon-main">
 					<button
 						id="getAnswersButton"
-						className="prose-lg pt-1 px-6"
+						className="prose-2xl pt-1 px-6"
 						onMouseOver={colorChangeOver}
 						onMouseOut={colorChangeOut}
 					>

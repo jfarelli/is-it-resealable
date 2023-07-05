@@ -23,7 +23,7 @@ const SingleBacon: React.FC<SingleBaconProps> = ({
 
 	return (
 		<div
-			className="text-center shadow-sm shadow-gray-900 rounded-2xl bg-white h-full"
+			className="flex flex-col justify-evenly text-center shadow-sm shadow-gray-900 rounded-2xl bg-white h-full"
 			data-testid="singleBacon"
 		>
 			<img
