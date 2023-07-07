@@ -9,9 +9,9 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.fetchBaconData = void 0;
 const fetchBaconData = () => __awaiter(void 0, void 0, void 0, function* () {
     try {
-        // const response = await fetch('http://localhost:8000/');
         const response = yield fetch('https://is-it-resealable-be.vercel.app/');
         if (!response.ok) {
             throw new Error('Something went wrong. Please try again!');
@@ -21,6 +21,7 @@ const fetchBaconData = () => __awaiter(void 0, void 0, void 0, function* () {
     }
     catch (error) {
         console.log('ERROR!!!', error);
+        throw error;
     }
 });
-exports.default = fetchBaconData;
+exports.fetchBaconData = fetchBaconData;

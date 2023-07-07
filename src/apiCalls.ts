@@ -11,5 +11,3 @@ export const fetchBaconData = async (): Promise<any> => {
 		throw error;
 	}
 };
-
-// export default fetchBaconData;

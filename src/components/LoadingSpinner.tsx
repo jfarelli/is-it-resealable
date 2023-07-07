@@ -1,9 +1,7 @@
 import * as React from 'react';
 import oval from '../images/oval.svg';
 
-const LoadingSpinner: React.FC = (
-	props
-) => {
+const LoadingSpinner: React.FC = () => {
 	return (
 		<>
 			<div className="loading-container">

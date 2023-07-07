@@ -17,7 +17,7 @@ describe('BaconBits', () => {
 		baconStyle: 'Crispy',
 		resealable: '❌',
 		image: 'mockData.jpg',
-        displayBaconDetails: jest.fn(),
+		displayBaconDetails: jest.fn(),
 	};
 
 	const BaconBitsComponent = (

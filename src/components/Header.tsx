@@ -1,9 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-
-interface HeaderProps {
-	scrolled: boolean;
-}
+import { HeaderProps } from '../model';
 
 const Header: React.FC<HeaderProps> = ({ scrolled }) => {
 	return (

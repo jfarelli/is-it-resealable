@@ -7,8 +7,8 @@ const react_1 = __importDefault(require("react"));
 const SocialMediaButtons_1 = __importDefault(require("./SocialMediaButtons"));
 const ResealableConditionals = ({ selectedBacon, }) => {
     var _a;
-    return (react_1.default.createElement("div", { "data-testid": "resealable-conditionals", className: "flex flex-col items-center mt-[8%]" },
-        react_1.default.createElement("h4", { className: "font-bold mb-1 text-2xl" }, (selectedBacon === null || selectedBacon === void 0 ? void 0 : selectedBacon.resealable) === '❌' ? (react_1.default.createElement("p", null, selectedBacon === null || selectedBacon === void 0 ? void 0 :
+    return (react_1.default.createElement("div", { "data-testid": "resealable-conditionals", className: "flex flex-col items-center text-center" },
+        react_1.default.createElement("h4", { className: "font-bold text-2xl" }, (selectedBacon === null || selectedBacon === void 0 ? void 0 : selectedBacon.resealable) === '❌' ? (react_1.default.createElement("p", null, selectedBacon === null || selectedBacon === void 0 ? void 0 :
             selectedBacon.companyName,
             " does",
             ' ',

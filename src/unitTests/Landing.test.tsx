@@ -88,7 +88,9 @@ describe('Landing', () => {
 			'display: block'
 		);
 
-		expect(screen.getByText(/is your bacon resealable/i)).toHaveStyle('font-size: 2em');
+		expect(screen.getByText(/is your bacon resealable/i)).toHaveStyle(
+			'font-size: 2em'
+		);
 
 		expect(screen.getByText(/after clicking the button/i)).toHaveStyle(
 			'font-size: 1.17em'

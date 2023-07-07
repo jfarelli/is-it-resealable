@@ -56,7 +56,9 @@ const App: React.FC = () => {
 					path="bacon-main"
 					element={
 						loading ? (
-							<h1><LoadingSpinner /></h1>
+							<h1>
+								<LoadingSpinner />
+							</h1>
 						) : (
 							<>
 								<Header scrolled={scrolled} />

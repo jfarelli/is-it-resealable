@@ -30,18 +30,16 @@ const Landing = () => {
             }
         }
     };
-    return (react_1.default.createElement("div", { className: "flex flex-col text-center h-screen items-center justify-center gap-y-8 bg-[#fdf2e3] text-[#9B4428]" },
-        react_1.default.createElement("h2", { className: "font-bold text-2xl sm:text-3xl" },
-            "The bacon lovers website that dares to ask",
-            react_1.default.createElement("br", null),
-            "one of the most important packaging questions:"),
-        react_1.default.createElement("div", { "data-testid": "resealableTextBackground", id: "resealableTextBackground", className: "font-bold bg-[#F9BB38] py-2 px-6 rounded-tl-3xl rounded-br-3xl transition duration-270 ease-in-out" },
-            react_1.default.createElement("h1", { "data-testid": "resealableText", id: "resealableText", className: "bg-[#F9BB38] pt-1 sm:pt-2 text-3xl sm:text-6xl transition duration-270 ease-in-out" }, "IS IT RESEALABLE???")),
-        react_1.default.createElement("h3", { "data-testid": "prompt-text", className: "font-bold sm:text-xl" },
-            "After clicking the button below, you\u2019ll be led to a page where you can start getting answers!",
-            react_1.default.createElement("br", null),
-            "Search and filter by brand, bacon style, or resealability!"),
-        react_1.default.createElement(react_router_dom_1.Link, { to: "/bacon-main" },
-            react_1.default.createElement("button", { id: "getAnswersButton", className: "p-2 sm:p-3 text-1xl sm:text-3xl", onMouseOver: colorChangeOver, onMouseOut: colorChangeOut }, "Get Answers!"))));
+    return (react_1.default.createElement("div", { "data-testid": "landing", className: "flex flex-col justify-center items-center text-center bg-[#fdf2e3] text-[#9B4428] h-screen" },
+        react_1.default.createElement("div", { className: "container flex flex-col justify-center gap-y-8" },
+            react_1.default.createElement("h1", { className: "font-bold prose-xl" }, "The bacon lovers website that dares to ask one of the most important packaging questions:"),
+            react_1.default.createElement("div", { "data-testid": "resealableTextBackground", id: "resealableTextBackground", className: "container flex justify-center font-bold prose-xl bg-[#F9BB38] transition duration-270 ease-in-out" },
+                react_1.default.createElement("h1", { "data-testid": "resealableText", id: "resealableText", className: "bg-[#F9BB38] transition duration-270 ease-in-out pt-2" }, "IS YOUR BACON RESEALABLE???")),
+            react_1.default.createElement("h3", { "data-testid": "prompt-text", className: "font-bold sm:text-xl" },
+                "After clicking the button below, you\u2019ll be led to a page where you can start getting answers!",
+                react_1.default.createElement("br", null),
+                "Search and filter by brand, bacon style, or resealability!"),
+            react_1.default.createElement(react_router_dom_1.Link, { to: "/bacon-main" },
+                react_1.default.createElement("button", { id: "getAnswersButton", className: "prose-2xl pt-1 px-6", onMouseOver: colorChangeOver, onMouseOut: colorChangeOut }, "GET ANSWERS")))));
 };
 exports.default = Landing;
