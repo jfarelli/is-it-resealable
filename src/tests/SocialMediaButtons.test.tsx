@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, screen, fireEvent } from '@testing-library/react';
+import { render, screen, fireEvent, within } from '@testing-library/react';
 import { BrowserRouter } from 'react-router-dom';
 import SocialMediaButtons from '../components/SocialMediaButtons';
 
@@ -26,20 +26,25 @@ describe('SocialMediaButtons', () => {
 			</BrowserRouter>
 		);
 
-		const websiteButton = screen.getByRole('link', { name: /website/i });
-		const facebookButton = screen.getByRole('link', { name: /facebook/i });
-		const twitterButton = screen.getByRole('link', { name: /twitter/i });
+		const socialMediaButtons = screen.getByTestId('social-media-buttons');
+		const links = within(socialMediaButtons).getAllByRole('link');
 
-		expect(websiteButton).toHaveAttribute(
-			'href',
+		const websiteButton = links[0];
+		const twitterButton = links[1];
+		const facebookButton = links[2];
+
+		expect(websiteButton).toBeInTheDocument();
+		expect(websiteButton.getAttribute('href')).toBe(
 			selectedBacon.companyContacts.website
 		);
-		expect(facebookButton).toHaveAttribute(
-			'href',
+
+		expect(facebookButton).toBeInTheDocument();
+		expect(facebookButton.getAttribute('href')).toBe(
 			selectedBacon.companyContacts.facebook
 		);
-		expect(twitterButton).toHaveAttribute(
-			'href',
+
+		expect(twitterButton).toBeInTheDocument();
+		expect(twitterButton.getAttribute('href')).toBe(
 			selectedBacon.companyContacts.twitter
 		);
 	});
@@ -77,9 +82,12 @@ describe('SocialMediaButtons', () => {
 			</BrowserRouter>
 		);
 
-		const websiteButton = screen.getByRole('link', { name: /website/i });
-		const facebookButton = screen.getByRole('link', { name: /facebook/i });
-		const twitterButton = screen.getByRole('link', { name: /twitter/i });
+		const socialMediaButtons = screen.getByTestId('social-media-buttons');
+		const links = within(socialMediaButtons).getAllByRole('link');
+
+		const websiteButton = links[0];
+		const twitterButton = links[1];
+		const facebookButton = links[2];
 
 		expect(websiteButton).toHaveAttribute('target', '_blank');
 		expect(facebookButton).toHaveAttribute('target', '_blank');
@@ -93,9 +101,12 @@ describe('SocialMediaButtons', () => {
 			</BrowserRouter>
 		);
 
-		const websiteButton = screen.getByRole('link', { name: /website/i });
-		const facebookButton = screen.getByRole('link', { name: /facebook/i });
-		const twitterButton = screen.getByRole('link', { name: /twitter/i });
+		const socialMediaButtons = screen.getByTestId('social-media-buttons');
+		const links = within(socialMediaButtons).getAllByRole('link');
+
+		const websiteButton = links[0];
+		const twitterButton = links[1];
+		const facebookButton = links[2];
 
 		const customAttribute = 'data-mock-clicked';
 

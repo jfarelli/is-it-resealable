@@ -10,7 +10,7 @@ describe('Landing', () => {
 
 		expect(screen.getByText(/the bacon lovers website/i)).toBeInTheDocument();
 
-		expect(screen.getByText(/is it resealable/i)).toBeInTheDocument();
+		expect(screen.getByText(/is your bacon resealable/i)).toBeInTheDocument();
 
 		expect(
 			screen.getByText(/after clicking the button below/i)
@@ -88,7 +88,7 @@ describe('Landing', () => {
 			'display: block'
 		);
 
-		expect(screen.getByText(/is it resealable/i)).toHaveStyle('font-size: 2em');
+		expect(screen.getByText(/is your bacon resealable/i)).toHaveStyle('font-size: 2em');
 
 		expect(screen.getByText(/after clicking the button/i)).toHaveStyle(
 			'font-size: 1.17em'
@@ -118,7 +118,7 @@ describe('Landing', () => {
 			'display: flex'
 		);
 
-		expect(screen.getByText(/is it resealable/i)).not.toHaveStyle(
+		expect(screen.getByText(/is your bacon resealable/i)).not.toHaveStyle(
 			'font-size: 1em'
 		);
 

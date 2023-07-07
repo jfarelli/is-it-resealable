@@ -64,7 +64,7 @@ describe('BaconBits', () => {
 		const imageElement = screen.getByAltText('Big Bill Crispy');
 		expect(imageElement).toBeInTheDocument();
 		expect(imageElement.getAttribute('src')).toBe(
-			'http://localhost:8000/images/mockData.jpg'
+			'https://is-it-resealable-be.vercel.app/images/mockData.jpg'
 		);
 	});
 

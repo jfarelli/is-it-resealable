@@ -61,7 +61,7 @@ describe('SingleBacon', () => {
 		const image = screen.getByAltText('Big Bill Crispy Bacon');
 		expect(image).toHaveAttribute(
 			'src',
-			'http://localhost:8000/images/mockData.jpg'
+			'https://is-it-resealable-be.vercel.app/images/mockData.jpg'
 		);
 	});
 

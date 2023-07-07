@@ -1,6 +1,6 @@
 import React from 'react';
 import { SocialMediaButtonsProps } from '../model';
-import { FaInstagram, FaTwitter, FaFacebook, FaLinkedin, FaLink } from 'react-icons/fa';
+import { FaInstagram, FaTwitter, FaFacebook, FaLinkedin } from 'react-icons/fa';
 import { CgWebsite } from 'react-icons/cg';
 
 const SocialMediaButtons: React.FC<SocialMediaButtonsProps> = ({

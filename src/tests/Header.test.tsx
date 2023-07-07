@@ -44,7 +44,7 @@ describe('Header', () => {
 
 		expect(headerComponent).toBeInTheDocument();
 		expect(headerComponent).toHaveClass(
-			'bg-[#F9BB38] text-[#9B4428] h-16 z-10 flex items-center justify-center drop-shadow-2xl fixed top-0 left-0 right-0 font-bold shadow-sm shadow-gray-700'
+			'flex items-center justify-center z-10 p-2 bg-[#F9BB38] text-[#9B4428] drop-shadow-2xl fixed top-0 left-0 right-0 font-bold shadow-md shadow-black-300'
 		);
 		expect(headerElement).toHaveClass(
 			'text-center bg-[#F9BB38] text-2xl sm:text-4xl hover:cursor-pointer'
