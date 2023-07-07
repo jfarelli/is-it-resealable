@@ -1,10 +1,7 @@
 import * as React from 'react';
-import './LoadingSpinner.css';
-import oval from '../images/oval.svg'
+import oval from '../images/oval.svg';
 
-interface LoadingSpinnerProps {}
-
-const LoadingSpinner: React.FunctionComponent<LoadingSpinnerProps> = (
+const LoadingSpinner: React.FC = (
 	props
 ) => {
 	return (

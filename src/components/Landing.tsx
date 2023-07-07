@@ -37,7 +37,10 @@ const Landing: React.FC = () => {
 	};
 
 	return (
-		<div className="flex flex-col justify-center items-center text-center bg-[#fdf2e3] text-[#9B4428] h-screen">
+		<div
+			data-testid="landing"
+			className="flex flex-col justify-center items-center text-center bg-[#fdf2e3] text-[#9B4428] h-screen"
+		>
 			<div className="container flex flex-col justify-center gap-y-8">
 				<h1 className="font-bold prose-xl">
 					The bacon lovers website that dares to ask one of the most important

@@ -7,6 +7,7 @@ import Header from './components/Header';
 import BaconHolder from './components/BaconHolder';
 import BaconBits from './components/BaconBits';
 import { AppProps } from './model';
+import LoadingSpinner from './components/LoadingSpinner';
 
 const App: React.FC = () => {
 	const [loading, setLoading] = useState<boolean>(false);
@@ -55,7 +56,7 @@ const App: React.FC = () => {
 					path="bacon-main"
 					element={
 						loading ? (
-							<h1>Loading...</h1>
+							<h1><LoadingSpinner /></h1>
 						) : (
 							<>
 								<Header scrolled={scrolled} />

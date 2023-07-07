@@ -11,7 +11,8 @@ body {
 	background-color: #fdf2e3;
 }
 
-button, .linked-icon {
+button,
+.linked-icon {
 	background-color: #9b4428;
 	color: #f9bb38;
 	border-radius: 50px;
@@ -20,15 +21,16 @@ button, .linked-icon {
 }
 
 .linked-icon {
-    font-size: 3rem;
-    padding: 10px;
+	font-size: 3rem;
+	padding: 10px;
 }
 
-button:hover, .linked-icon:hover {
+button:hover,
+.linked-icon:hover {
 	background-color: #f9bb38;
 	color: #9b4428;
 	box-shadow: 0 0 5px;
-    cursor: pointer;
+	cursor: pointer;
 }
 
 img {
@@ -36,7 +38,7 @@ img {
 }
 
 .image-container {
-	width: 400px; 
+	width: 400px;
 	height: 300px;
 	overflow: hidden;
 }
@@ -48,13 +50,23 @@ img {
 }
 
 .single-bacon-cards {
-    width: 100%;
+	width: 100%;
 	height: 200px;
 	object-fit: contain;
-    border-radius: 15px 15px 0 0 ;
+	border-radius: 15px 15px 0 0;
 }
 
-.single-bacon {
-    /* row-gap: 6rem;
-column-gap: 2rem; */
+.loading-container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	height: 100vh;
+	width: 100%;
+	color: #e2d5d6;
+	font-size: 9em;
+}
+
+.loading-image {
+	height: 25%;
 }
